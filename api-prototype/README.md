@@ -7,7 +7,7 @@ To start, from the terminal:
     vagrant ssh
     srv/run_dev.sh
 ```
-It currently doesn't do anything!
+It currently doesn't do much
 
 ##Intent
 A functional (if limited) API for registering new Land Charges (specifically bankruptcies). The functioning prototype only because...
