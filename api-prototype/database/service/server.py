@@ -52,6 +52,5 @@ def post_lc():
 # Return a 201 (Created) response, with the new item in the
 # response body.
     response = Response( status=201 )
-  #  response.headers[ 'Location'] = url_for( 'record', id=new_item.identifier )
     return response
-#return Response( json.dumps( new_item.__dict__ ), status=201, mimetype='application/json' )
+
