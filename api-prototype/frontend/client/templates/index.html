@@ -1,23 +1,57 @@
 <!doctype html>
-<title>Index</title>
+<head>
+    <title>Bankruptcy Search Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+</head>
 <body>
+<div class="container">
 
-<h1>Bankruptcy Search</h1>
+    <div class="row">
+        <h1>Bankruptcy Search</h1>
+        <br/><br>
 
-<form action="/search" method="POST">
-    <p>Enter the name of the person you wish to check against the Bankruptcy register</p>
+        <form action="/search" method="POST">
+            <p>Enter the name of the person you wish to check against the Bankruptcy register</p>
+            <br/>
+            <label for="forename" class="col-sm-2">Forename:</label>
+            <input type="text" id="forename" name="forename" value="{{forename}}">
+            {% if forename_error is defined %}
+                <span class="glyphicon glyphicon-remove"style=" color:red"></span> No Forename entered
+            {% endif %}
+            <br/><br/>
+            <label for="surname" class="col-sm-2">Surname:</label>
+            <input type="text" id="surname" name="surname" value="{{surname}}">
+            {% if surname_error is defined %}
+                <span class="glyphicon glyphicon-remove" style="color:red"></span> No Surname entered
+            {% endif %}
+            <br/><br/>
+            <input class="btn btn-success pull-right" type="submit">
+        </form>
+    </div>
+    {% if results is defined %}
+        <div class="row">
+            <h2>Results</h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Nature</th>
+                </thead>
+                {% for n in results %}
+                    <tr>
+                        <td>{{n.name}}</td>
+                        <td>{{n.address}}</td>
+                        <td>{{n.nature}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br/><br/>
+            <a href="index" class="btn btn-primary pull-right" >reset</a>
+        </div>
+    {% endif %}
 
-    <label for="forename">Forename:</label> <input type="text" id="forename" name="forename">
-    <br/>
-    <label for="surname">Surname:</label> <input type="text" id="surname" name="surname">
-    <br/>
-    <input type="submit">
-</form>
-
-<ul>
-    {% for n in results %}
-    <li>{{n.name + " " + n.address + " " + n.nature}}</li>
-    {% endfor %}
-</ul>
+<div>
 
 </body>

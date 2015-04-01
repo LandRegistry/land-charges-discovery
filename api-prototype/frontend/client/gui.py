@@ -11,13 +11,25 @@ def index():
 
 @app.route('/search', methods=['POST'])
 def search():
-    #error = None
 
-    if request.form['forename']=="" or request.form['surname']=="":
+    forename_input = request.form['forename'];
+    surname_input = request.form['surname'];
+
+
+    #  Check Inputs
+    if forename_input=="" and surname_input=="":
         print("please complete all fields")
-        #error = 'Invalid username/password'
+        forename = 'Missing forename'
+        surname = 'Missing surname'
+        return render_template('index.html', forename_error=forename, surname_error=surname)
+    elif forename_input=="":
+        forename = 'Missing forename'
+        return render_template('index.html', forename_error=forename, surname=surname_input)
+    elif surname_input=="":
+        surname = 'Missing surname'
+        return render_template('index.html', surname_error=surname, forename=forename_input)
     else:
-
+        # Call rest service to do search
 
         url = 'http://10.0.2.2:8070/search_name'
         data = {
@@ -29,7 +41,6 @@ def search():
 
         print(json.dumps(response.json()))
 
-    return render_template('index.html', results=response.json() )
-    #return render_template('index.html')
-   # return render_template('login.html', error=error)
+    return render_template('index.html', results=response.json(), forename=forename_input, surname=surname_input )
+
 
