@@ -24,13 +24,13 @@ def get_lc():
 def get_name():
     json_data = request.get_json( force=True )
 
+
     array = session.query(LandCharge).filter_by(name= json_data[ 'name' ]).all()
-    print()
+
 
     returns = []
     for item in array:
         returns.append(item.serialize())
-
 
     return Response(json.dumps(returns), status=200, mimetype='application/json')
 

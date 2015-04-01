@@ -1,3 +1,23 @@
 <!doctype html>
 <title>Index</title>
-Health OK
+<body>
+
+<h1>Bankruptcy Search</h1>
+
+<form action="/search" method="POST">
+    <p>Enter the name of the person you wish to check against the Bankruptcy register</p>
+
+    <label for="forename">Forename:</label> <input type="text" id="forename" name="forename">
+    <br/>
+    <label for="surname">Surname:</label> <input type="text" id="surname" name="surname">
+    <br/>
+    <input type="submit">
+</form>
+
+<ul>
+    {% for n in results %}
+    <li>{{n.name + " " + n.address + " " + n.nature}}</li>
+    {% endfor %}
+</ul>
+
+</body>
