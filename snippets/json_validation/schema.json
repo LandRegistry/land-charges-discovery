@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "class": { "type": "string" },
+    "name": { "type": "string" },
+    "address": { "type": "string" }
+  },
+  "required": ["class","name","address"]
+}
