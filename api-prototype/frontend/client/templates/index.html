@@ -18,13 +18,13 @@
             <label for="forename" class="col-sm-2">Forename:</label>
             <input type="text" id="forename" name="forename" value="{{forename}}">
             {% if forename_error is defined %}
-                <span class="glyphicon glyphicon-remove"style=" color:red"></span> No Forename entered
+                <span class="glyphicon glyphicon-remove"style=" color:red"></span> {{forename_error}}
             {% endif %}
             <br/><br/>
             <label for="surname" class="col-sm-2">Surname:</label>
             <input type="text" id="surname" name="surname" value="{{surname}}">
             {% if surname_error is defined %}
-                <span class="glyphicon glyphicon-remove" style="color:red"></span> No Surname entered
+                <span class="glyphicon glyphicon-remove" style="color:red"></span> {{surname_error}}
             {% endif %}
             <br/><br/>
             <input class="btn btn-success pull-right" type="submit">
