@@ -43,6 +43,7 @@ applications = [
     Application(status="pending", land_charge=charges[2])
 ]
 
+
 for item in charges:
     session.add(item)
 session.commit()
