@@ -18,4 +18,4 @@ puppet apply /home/vagrant/srv/manifests/postgres.pp
 export SETTINGS="config.DevelopmentConfig"
 cd /home/vagrant/srv
 #python3 manage.py db upgrade
-#python3 populate.py
+python3 populate.py

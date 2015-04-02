@@ -2,6 +2,7 @@ from flask import Response, request, url_for
 from service.model import LandCharge
 from service import app, session
 import json
+import datetime
 from sqlalchemy import *
 
 @app.route('/', methods=['GET'])
@@ -24,9 +25,8 @@ def get_lc():
 def get_name():
     json_data = request.get_json( force=True )
 
-
+    json_data[ 'name' ] = json_data[ 'name' ].upper()
     array = session.query(LandCharge).filter_by(name= json_data[ 'name' ]).all()
-
 
     returns = []
     for item in array:
@@ -42,10 +42,32 @@ def post_lc():
         return Response( status=415 ) # 415 (Unsupported Media Type)
 
     json_data = request.get_json( force=True )
+    json_data[ 'nature' ] = json_data[ 'nature' ].upper()
+    json_data[ 'name' ] = json_data[ 'name' ].upper()
+    json_data[ 'address' ] = json_data[ 'address' ].upper()
+    now = datetime.datetime.now()
 
-    item = LandCharge(nature= json_data[ 'nature'], date= "20.03.2105", name= json_data[ 'name' ], address= json_data[ 'address' ])
+    #write to the database
+    item = LandCharge(nature= json_data[ 'nature'], date= now.strftime("%d/%m/%Y"), name= json_data[ 'name' ], address= json_data[ 'address' ])
     session.add(item)
     session.commit()
+
+    #now write to the data files so that any inserts will remain when VM next brought up
+    file = open("syt_nature.txt","a") #opens file
+    file.write(json_data[ 'nature' ] + '\n')
+    file.close()
+
+    file = open("syt_date.txt","a") #opens file
+    file.write(now.strftime("%d/%m/%Y") + '\n')
+    file.close()
+
+    file = open("syt_name.txt","a") #opens file
+    file.write(json_data[ 'name' ] + '\n')
+    file.close()
+
+    file = open("syt_address.txt","a") #opens file
+    file.write(json_data[ 'address' ] + '\n')
+    file.close()
 
 
 

@@ -18,7 +18,7 @@ def search():
 
     #  Check Inputs
     if forename_input=="" and surname_input=="":
-        print("please complete all fields")
+        #print("please complete all fields")
         forename = 'Missing forename'
         surname = 'Missing surname'
         return render_template('index.html', forename_error=forename, surname_error=surname)
@@ -39,7 +39,7 @@ def search():
 
         response = requests.post(url, data=json.dumps(data), headers=headers)
 
-        print(json.dumps(response.json()))
+        #print(json.dumps(response.json()))
 
     return render_template('index.html', results=response.json(), forename=forename_input, surname=surname_input )
 
