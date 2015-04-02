@@ -16,7 +16,7 @@ chmod g+w /etc/supervisord.d
 
 
 echo "Configure Venv"
-cat >> /home/vagrant/.bashrc << EOF
+cat >> /home/vagrant/.bashrc <<EOF
     export WORKON_HOME='/home/vagrant/venvs'
     source /usr/bin/virtualenvwrapper.sh
 EOF
@@ -26,7 +26,7 @@ gem install --no-ri --no-rdoc puppet
 puppet module install puppetlabs-postgresql
 puppet apply /home/vagrant/srv/manifests/postgres.pp
 
-/home/vagrant/database/provision.sh
-/home/vagrant/frontent/provision.sh
+bash /home/vagrant/database/provision.sh
+bash /home/vagrant/frontent/provision.sh
 
-sudo -i -u vagrant source /home/vagrant/install.sh
+sudo -i -u vagrant source -c /vagrant/install.sh

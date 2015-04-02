@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
 
-/home/vagrant/database/install.sh
-/home/vagrant/frontent/install.sh
+bash /home/vagrant/database/install.sh
+bash /home/vagrant/frontent/install.sh
+
+echo "Stop supervisor"
+sudo supervisorctl stop all
+
+echo "Start supervisor"
+sudo supervisorctl reload
