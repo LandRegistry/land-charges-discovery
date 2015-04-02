@@ -3,20 +3,12 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-$xtra_prof = <<EOF
-localectl set-locale LANG=en_GB.UTF-8
-timedatectl set-timezone Europe/London
-EOF
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.define :database do |database|
-        database.vm.box = "landregistry/centos-beta"
-        database.vm.network "forwarded_port", guest: 5001, host: 5001
-        database.vm.network "forwarded_port", guest: 5002, host: 5002
-        database.vm.hostname = "dev"
-        database.vm.synced_folder "./database", "/home/vagrant/database", create: true
-        database.vm.synced_folder "./frontend", "/home/vagrant/frontend", create: true
-        database.vm.provision :shell, path: 'provision.sh'
-        database.vm.provision :shell, :inline => $xtra_prov
-    end
+    config.vm.box = "landregistry/centos-beta"
+    config.vm.network "forwarded_port", guest: 5001, host: 5001
+    config.vm.network "forwarded_port", guest: 5002, host: 5002
+    config.vm.hostname = "dev"
+    config.vm.synced_folder "./database", "/home/vagrant/database", create: true
+    config.vm.synced_folder "./frontend", "/home/vagrant/frontend", create: true
+    config.vm.provision :shell, path: 'provision.sh'
 end

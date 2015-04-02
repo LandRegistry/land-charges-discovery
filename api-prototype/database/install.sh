@@ -4,6 +4,7 @@ echo "Install database"
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $dir
 
+echo "Activate VEnv"
 virtualenv -p python3 ~/venvs/database
 source ~/venvs/database/bin/activate
 if [ -d /usr/pgsql-9.3/bin ]; then

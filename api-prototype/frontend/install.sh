@@ -41,3 +41,5 @@ autorestart=true
 user=$USER
 environment=$SUPERVISOR_ENV
 EOF
+
+# Still not quite working. Database seems to respond, front end not so much (though does work if run in it's venv)
