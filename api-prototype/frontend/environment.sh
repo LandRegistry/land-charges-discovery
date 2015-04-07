@@ -1,0 +1,1 @@
+export SETTINGS="config.DevelopmentConfig"

@@ -4,19 +4,11 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.define :database do |database|
-        database.vm.box = "landregistry/centos-beta"
-        database.vm.network "forwarded_port", guest: 5000, host: 8070
-        database.vm.hostname = "database"
-        database.vm.synced_folder "./database", "/home/vagrant/srv", create: true
-        database.vm.provision :shell, path: 'database/provision.sh'
-    end
-
-    config.vm.define :frontend do |frontend|
-        frontend.vm.box = "landregistry/centos-beta"
-        frontend.vm.network "forwarded_port", guest: 5000, host: 8081
-        frontend.vm.hostname = "frontend"
-        frontend.vm.synced_folder "./frontend", "/home/vagrant/srv", create: true
-        frontend.vm.provision :shell, path: 'frontend/provision.sh'
-    end
+    config.vm.box = "landregistry/centos-beta"
+    config.vm.network "forwarded_port", guest: 5001, host: 5001
+    config.vm.network "forwarded_port", guest: 5002, host: 5002
+    config.vm.hostname = "dev"
+    config.vm.synced_folder "./database", "/home/vagrant/database", create: true
+    config.vm.synced_folder "./frontend", "/home/vagrant/frontend", create: true
+    config.vm.provision :shell, path: 'provision.sh'
 end

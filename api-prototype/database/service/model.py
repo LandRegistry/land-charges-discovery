@@ -24,5 +24,3 @@ class LandCharge(Base):
 
 engine = create_engine('postgresql://discotype:discotype@localhost/discotype')
 Base.metadata.create_all(engine)
-
-

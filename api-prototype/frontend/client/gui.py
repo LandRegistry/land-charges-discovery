@@ -1,17 +1,19 @@
-from flask import render_template, request
-from client import app
+from flask import request, render_template
 import requests
+import logging
+from client import app
 import json
 
 
 @app.route('/index', methods=['GET'])
 def index():
+    logging.info("index called")
     return render_template('index.html')
 
 
 @app.route('/search', methods=['POST'])
 def search():
-
+    logging.info("search called")
     forename_input = request.form['forename'];
     surname_input = request.form['surname'];
     alternative_input = request.form['alternative']
@@ -33,7 +35,7 @@ def search():
     else:
         # Call rest service to do search
 
-        url = 'http://10.0.2.2:8070/search_name'
+        url = 'http://10.0.2.2:5001/search_name'
         if alternative_input=="":
             data = {
                 'name': request.form['forename'] + " " + request.form['surname']
@@ -50,5 +52,3 @@ def search():
         #print(json.dumps(response.json()))
 
     return render_template('index.html', results=response.json(), forename=forename_input, surname=surname_input, alternative=alternative_input )
-
-

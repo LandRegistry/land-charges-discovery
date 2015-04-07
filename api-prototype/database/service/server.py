@@ -2,16 +2,19 @@ from flask import Response, request, url_for
 from service.model import LandCharge
 from service import app, session
 import json
+import logging
 import datetime
 from sqlalchemy import *
 
 @app.route('/', methods=['GET'])
 def healthcheck():
-    return Response(status=200)
+    logging.info("healthcheck called")
+    return Response("All OK", status=200)
 
 
 @app.route('/search_all', methods=['GET'])
 def get_lc():
+    logging.info("search_all called")
     array = session.query(LandCharge).all()
 
     returns = []
@@ -23,6 +26,7 @@ def get_lc():
 
 @app.route('/search_name', methods=['POST'])
 def get_name():
+    logging.info("search_name called")
     json_data = request.get_json( force=True )
 
     json_data[ 'name' ] = json_data[ 'name' ].upper()
@@ -38,6 +42,7 @@ def get_name():
 
 @app.route('/register', methods=['POST'])
 def post_lc():
+    logging.info("register called")
     if request.headers[ 'Content-Type' ] != "application/json":
         return Response( status=415 ) # 415 (Unsupported Media Type)
 
@@ -52,6 +57,10 @@ def post_lc():
     session.add(item)
     session.commit()
 
+    # now write to the data files so that any inserts will remain when VM next brought up
+    file = open("syt_nature.txt","a") #opens file
+    file.write(json_data[ 'nature' ] + '\n')
+    file.close()
 
     charge_data = json.loads(open('syt_data.json').read())
 
