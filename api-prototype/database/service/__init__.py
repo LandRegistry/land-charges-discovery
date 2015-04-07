@@ -3,6 +3,7 @@ from flask import Flask
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import logging
 import os
 
 app = Flask( __name__ )
@@ -16,3 +17,5 @@ Base.metadata.bind = engine
 DBSession = sessionmaker()
 DBSession.bind = engine
 session = DBSession()
+logging.basicConfig(filename="logs/log", level=logging.DEBUG)
+logging.info("started")

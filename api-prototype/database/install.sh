@@ -19,7 +19,7 @@ fi
 
 
 SUPERVISOR_ENV="SETTINGS=\"config.DevelopmentConfig\""
-
+SQLALCHEMY_DATABASE_URL = "postgresql://discotype:discotype@localhost/discotype"
 
 #Run manage with appropriate SETTINGS variable from above
 #eval `echo $SUPERVISOR_ENV` python manage.py db upgrade

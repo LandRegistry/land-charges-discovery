@@ -1,0 +1,9 @@
+INFO:werkzeug: * Detected change in '/home/vagrant/frontend/client/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/home/vagrant/frontend/client/__init__.py', reloading
+INFO:root:started
+INFO:werkzeug: * Detected change in '/home/vagrant/frontend/client/api.py', reloading
+INFO:root:started
+INFO:werkzeug: * Detected change in '/home/vagrant/frontend/client/gui.py', reloading
+INFO:root:started
+INFO:werkzeug: * Detected change in '/home/vagrant/frontend/client/gui.py', reloading
+INFO:root:started
