@@ -4,6 +4,6 @@ echo "Database specific provisioning"
 echo "export PATH=$PATH:/usr/local/bin" > /etc/profile.d/local_bin.sh
 
 export SETTINGS="config.DevelopmentConfig"
-cd /home/vagrant/srv
+cd /home/vagrant/database
 python3 populate.py
 

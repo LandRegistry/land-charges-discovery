@@ -57,7 +57,7 @@ def post_lc():
     session.add(item)
     session.commit()
 
-    #now write to the data files so that any inserts will remain when VM next brought up
+    # now write to the data files so that any inserts will remain when VM next brought up
     file = open("syt_nature.txt","a") #opens file
     file.write(json_data[ 'nature' ] + '\n')
     file.close()
