@@ -9,7 +9,7 @@ from sqlalchemy import *
 @app.route('/', methods=['GET'])
 def healthcheck():
     logging.info("healthcheck called")
-    return Response(status=200)
+    return Response("All OK", status=200)
 
 
 @app.route('/search_all', methods=['GET'])

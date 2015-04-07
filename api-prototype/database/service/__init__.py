@@ -17,5 +17,5 @@ Base.metadata.bind = engine
 DBSession = sessionmaker()
 DBSession.bind = engine
 session = DBSession()
-logging.basicConfig(filename="logs/log", level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 logging.info("started")

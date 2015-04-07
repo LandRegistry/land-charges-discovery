@@ -12,13 +12,9 @@ yum install -y python3-devel
 pip3 install virtualenv
 pip3 install virtualenvwrapper
 
-yum install -y supervisor
 yum install -y nano
-systemctl enable supervisord
-systemctl start supervisord
-chown root:vagrant /etc/supervisord.d
-chmod g+w /etc/supervisord.d
 
+gem install foreman
 
 echo "Configure Venv"
 cat >> /home/vagrant/.bashrc <<EOF
@@ -27,6 +23,20 @@ cat >> /home/vagrant/.bashrc <<EOF
     source /usr/local/bin/virtualenvwrapper.sh
 EOF
 echo "Done"
+
+cat > /home/vagrant/run.sh << EOF
+foreman start -f procfile
+EOF
+chmod +x /home/vagrant/run.sh
+
+cat > /home/vagrant/procfile << EOF
+database: ./database/run_dev.sh
+frontend: ./frontend/run_dev.sh
+EOF
+
+chown vagrant:vagrant /home/vagrant/procfile
+chown vagrant:vagrant /home/vagrant/run.sh
+chmod +x /home/vagrant/run.sh
 
 gem install --no-ri --no-rdoc puppet
 
@@ -37,3 +47,4 @@ bash /home/vagrant/database/provision.sh
 bash /home/vagrant/frontend/provision.sh
 
 sudo -i -u vagrant bash -c /vagrant/install.sh
+

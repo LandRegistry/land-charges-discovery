@@ -15,31 +15,3 @@ pip3 install -r requirements.txt
 if [ ! -d $dir/logs ]; then
 	mkdir $dir/logs
 fi
-
-
-SUPERVISOR_ENV="SETTINGS=\"config.DevelopmentConfig\""
-
-
-#Run manage with appropriate SETTINGS variable from above
-#eval `echo $SUPERVISOR_ENV` python manage.py db upgrade
-
-if [ -n "$SQLALCHEMY_DATABASE_URI" ]; then
-  SUPERVISOR_ENV="$SUPERVISOR_ENV,SQLALCHEMY_DATABASE_URI=\"$SQLALCHEMY_DATABASE_URI\""
-fi
-
-if [ -n "$LOGGING_PATH" ]; then
-  SUPERVISOR_ENV="$SUPERVISOR_ENV,LOGGING_PATH=\"$LOGGING_PATH\""
-fi
-
-echo "Adding database to supervisord..."
-cat > /etc/supervisord.d/frontend.ini << EOF
-[program:frontend]
-command=$HOME/venvs/frontend/bin/gunicorn -w 16 --log-file=- --log-level DEBUG -b 0.0.0.0:5002 --timeout 120 client.api:app
-directory=$dir
-autostart=true
-autorestart=true
-user=$USER
-environment=$SUPERVISOR_ENV
-EOF
-
-# Still not quite working. Database seems to respond, front end not so much (though does work if run in it's venv)
