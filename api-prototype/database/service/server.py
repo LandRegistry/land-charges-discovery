@@ -62,18 +62,11 @@ def post_lc():
     file.write(json_data[ 'nature' ] + '\n')
     file.close()
 
-    file = open("syt_date.txt","a") #opens file
-    file.write(now.strftime("%d/%m/%Y") + '\n')
-    file.close()
+    charge_data = json.loads(open('syt_data.json').read())
 
-    file = open("syt_name.txt","a") #opens file
-    file.write(json_data[ 'name' ] + '\n')
-    file.close()
-
-    file = open("syt_address.txt","a") #opens file
-    file.write(json_data[ 'address' ] + '\n')
-    file.close()
-
+    charge_data['data'].append({"name": json_data['name'], "address": json_data['address'], "nature": json_data['nature'], "date": "30.01.1908"} )
+    file = open("syt_data.json","w")
+    file.write(json.dumps(charge_data))
 
 
 # Return a 201 (Created) response, with the new item in the
