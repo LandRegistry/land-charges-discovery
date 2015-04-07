@@ -3,6 +3,7 @@
     <title>Bankruptcy Search Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
 
 </head>
 <body>
@@ -45,7 +46,7 @@
     {% if results is defined %}
         <div class="row">
             <h2>Results</h2>
-            <table class="table table-hover">
+            <table id="resultsTable" class="table table-hover">
                 <thead>
                     <th class="col-sm-5">Name</thclass>
                     <th class="col-sm-5">Address</th>
@@ -67,5 +68,15 @@
     {% endif %}
 
 <div>
+
+{% if results|length > 10 %}
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#resultsTable').DataTable();
+        });
+    </script>
+{% endif %}
 
 </body>
