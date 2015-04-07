@@ -22,7 +22,8 @@ def search():
         #print("please complete all fields")
         forename = 'Missing forename'
         surname = 'Missing surname'
-        return render_template('index.html', forename_error=forename, surname_error=surname)
+        altname = 'Missing complex name'
+        return render_template('index.html', forename_error=forename, surname_error=surname, altname_error=altname)
     elif forename_input=="" and alternative_input=="":
         forename = 'Missing forename'
         return render_template('index.html', forename_error=forename, surname=surname_input)
@@ -48,6 +49,6 @@ def search():
 
         #print(json.dumps(response.json()))
 
-    return render_template('index.html', results=response.json(), forename=forename_input, surname=surname_input )
+    return render_template('index.html', results=response.json(), forename=forename_input, surname=surname_input, alternative=alternative_input )
 
 
