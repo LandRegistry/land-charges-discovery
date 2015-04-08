@@ -48,3 +48,8 @@ bash /home/vagrant/frontend/provision.sh
 
 sudo -i -u vagrant bash -c /vagrant/install.sh
 
+export SETTINGS="config.DevelopmentConfig"
+source /home/vagrant/venvs/database/bin/activate
+cd /home/vagrant/database
+python3 populate.py
+
