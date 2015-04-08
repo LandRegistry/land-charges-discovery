@@ -33,7 +33,7 @@ def process():
         response = requests.post(url, data=json.dumps(json_data), headers=headers)
 
         if response.status_code == 201:
-            logging.log("Received 201")
+            logging.info("Received 201")
             data = {
                 "message": "Register complete"
             }
