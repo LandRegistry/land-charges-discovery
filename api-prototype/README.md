@@ -5,7 +5,7 @@ To start, from the terminal:
 ```
     vagrant up
     vagrant ssh
-    srv/run_dev.sh
+    ./run.sh
 ```
 It currently doesn't do much
 
