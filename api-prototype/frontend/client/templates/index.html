@@ -44,8 +44,9 @@
         </form>
     </div>
     {% if results is defined %}
+    	{% if results|length > 0 %}
         <div class="row">
-            <h2>Results</h2>
+            <h2>Search Results</h2><br/>
             <table id="resultsTable" class="table table-hover">
                 <thead>
                     <th class="col-sm-5">Name</thclass>
@@ -65,6 +66,11 @@
             <br/><br/>
             <a href="index" class="btn btn-primary pull-right" >reset</a>
         </div>
+    	{% else %}
+    		<h3><span class="glyphicon glyphicon-info-sign"></span> Search returned no results</h3>
+    		<br/><br/>
+       	 <a href="index" class="btn btn-primary pull-right" >reset</a>
+    	{% endif %}
     {% endif %}
 
 <div>
