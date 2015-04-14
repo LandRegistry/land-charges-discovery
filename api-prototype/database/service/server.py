@@ -18,6 +18,8 @@ def get_lc():
     logging.info("search_all called")
     array = session.query(LandCharge).all()
 
+    print(array)
+
     returns = []
     for item in array:
         returns.append(item.serialize())

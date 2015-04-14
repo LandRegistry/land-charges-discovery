@@ -15,6 +15,7 @@ def healthcheck():
 def remote_healthcheck():
     logging.info("remote healthcheck called")
     r = requests.get('http://10.0.2.2:5001/')
+    logging.info("GOT: " + r.status_code.__str__())
     return Response("Recieved", status=r.status_code)
 
 

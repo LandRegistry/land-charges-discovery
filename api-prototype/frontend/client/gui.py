@@ -18,9 +18,11 @@ def search():
     surname_input = request.form['surname'];
     alternative_input = request.form['alternative']
 
+    logging.info( "FN:" + forename_input)
 
     #  Check Inputs
     if forename_input=="" and surname_input=="" and alternative_input=="":
+        logging.info("incomplete")
         #print("please complete all fields")
         forename = 'Missing forename'
         surname = 'Missing surname'
