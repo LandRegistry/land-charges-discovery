@@ -5,14 +5,29 @@ import requests
 from service.server import app
 from service import server
 from service.model import LandCharge
+import json
 
 
 class FakeQuery:
+    def __init__(self, data):
+        self.data = data
+
+    def filter_by(self, **kwargs):
+        new_item = FakeQuery([
+            LandCharge(nature='PAB', date='30/01/1908', name='ARTHUR MURRAY', address='FLAT 2, HIGH ST. KENSINGTON'),
+            LandCharge(nature='WOB', date='30/01/1908', name='ARTHUR MURRAY', address='FLAT 2, HIGH ST. KENSINGTON')
+        ])
+        return new_item
+
     def all(self):
-        return [
-            LandCharge(nature='PAB', date='30/01/1908', name='ARTHUR MURRAY', address='FLAT 2, HIGH ST. KENSINGTON')
-        ]
-fakeResults = FakeQuery()
+        return self.data
+
+
+fakeResults = FakeQuery([
+    LandCharge(nature='PAB', date='30/01/1908', name='ARTHUR MURRAY', address='FLAT 2, HIGH ST. KENSINGTON'),
+    LandCharge(nature='WOB', date='30/01/1908', name='ARTHUR MURRAY', address='FLAT 2, HIGH ST. KENSINGTON'),
+    LandCharge(nature='PAB', date='30/01/1908', name='BOB HOWARD', address='FLAT 79, HIGH ST. KENSINGTON')
+])
 
 
 class TestServer:
@@ -33,5 +48,14 @@ class TestServer:
     @mock.patch('service.server.session.query', return_value=fakeResults)
     def test_search_all(self, mock_query):
         response = self.app.get('/search_all')
-        print(response.data)
-        assert(1 == 1)
+        json_data = json.loads(response.data.decode())
+        assert(len(json_data) == 3)
+        assert(json_data[2]['name'] == "BOB HOWARD")
+
+    @mock.patch('service.server.session.query', return_value=fakeResults)
+    def test_search(self, mock_query):
+        response = self.app.post('/search_name', data='{"name": "ARTHUR MURRAY"}',
+                                 headers={'Content-Type': 'application/json'})
+        json_data = json.loads(response.data.decode())
+        assert(len(json_data) == 2)
+        assert(json_data[1]['name'] == "ARTHUR MURRAY")

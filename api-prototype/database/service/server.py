@@ -4,6 +4,7 @@ from service import app, session
 import json
 import logging
 import datetime
+import sys
 from sqlalchemy import *
 
 
@@ -17,8 +18,6 @@ def healthcheck():
 def get_lc():
     logging.info("search_all called")
     array = session.query(LandCharge).all()
-
-    print(array)
 
     returns = []
     for item in array:
@@ -35,12 +34,14 @@ def get_name():
     json_data['name'] = json_data['name'].upper()
     array = session.query(LandCharge).filter_by(name=json_data['name']).all()
 
+    logging.info(array)
+
     returns = []
     for item in array:
         returns.append(item.serialize())
+    logging.info(returns)
 
     return Response(json.dumps(returns), status=200, mimetype='application/json')
-
 
 @app.route('/register', methods=['POST'])
 def post_lc():
