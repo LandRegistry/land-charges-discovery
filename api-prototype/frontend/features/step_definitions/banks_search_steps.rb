@@ -5,20 +5,25 @@ Given (/^I enter no name details$/) do
   visit( 'http://localhost:5002/index' )
 end
 
-Then(/^I see the search page$/) do
-    expect( page.has_css?( "div.form-group" ) ).to be true
-end
-
-
 Given(/^enter name details$/) do
   visit( 'http://localhost:5002/index' )
   page.fill_in "forename", :with => "Jack"
   page.fill_in "surname", :with => "Bloggs"
 end
 
+Given(/^enter complex name details$/) do
+  visit( 'http://localhost:5002/index' )
+  page.fill_in "alternative", :with => "BRADFORD DIOCESAN BOARD OF FINANCE"
+end
+
+Then(/^I see the search page$/) do
+    expect( page.has_css?( "div.form-group" ) ).to be true
+end
+
 Then (/^I see the result page$/) do
     page.should have_content("Search Results")
 end
+
 
 Then (/^I can reset form$/) do
   click_link('reset')
