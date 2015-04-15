@@ -18,3 +18,8 @@ end
 When(/^I go to it's URL$/) do
     visit( 'http://localhost:5002/index' )
 end
+
+
+When (/^I submit search$/) do
+    click_button('submit')
+end

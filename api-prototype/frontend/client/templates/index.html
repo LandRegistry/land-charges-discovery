@@ -40,7 +40,7 @@
             <span class="glyphicon glyphicon-remove" style="color:red"></span> {{altname_error}}
             {% endif %}
             <br/><br/>
-            <input class="btn btn-success pull-right" type="submit">
+            <input class="btn btn-success pull-right" id="submit" type="submit">
         </form>
     </div>
     {% if results is defined %}
@@ -64,12 +64,12 @@
                 {% endfor %}
             </table>
             <br/><br/>
-            <a href="index" class="btn btn-primary pull-right" >reset</a>
+            <a href="index" class="btn btn-primary pull-right" id="reset" >reset</a>
         </div>
     	{% else %}
     		<h3><span class="glyphicon glyphicon-info-sign"></span> Search returned no results</h3>
     		<br/><br/>
-       	 <a href="index" class="btn btn-primary pull-right" >reset</a>
+       	 <a href="index" class="btn btn-primary pull-right" id="reset" >reset</a>
     	{% endif %}
     {% endif %}
 
