@@ -34,12 +34,9 @@ def get_name():
     json_data['name'] = json_data['name'].upper()
     array = session.query(LandCharge).filter_by(name=json_data['name']).all()
 
-    logging.info(array)
-
     returns = []
     for item in array:
         returns.append(item.serialize())
-    logging.info(returns)
 
     return Response(json.dumps(returns), status=200, mimetype='application/json')
 
