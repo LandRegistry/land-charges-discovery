@@ -34,3 +34,16 @@ class TestB2B:
                                  data={'forename': 'Jack', 'surname': 'Bloggs', 'alternative': ''})
         assert('JACK BLOGGS' in response.data.decode())
         assert('12 HIGH STREET' in response.data.decode())
+
+    fake_search = FakeResponse(str.encode(search_string), 201)
+    @mock.patch('requests.post', return_value=fake_search)
+    def test_b2bregister(self, mock_post):
+        response = self.app.post('/b2b_register', data={'nature': 'WOB', 'name': 'John Forename', 'address': '12 high street'})
+        assert response.status_code == 200
+
+    @mock.patch('requests.post', return_value=fake_search)
+    def test_b2bpostman(self, mock_post):
+        headers = {'Content-Type': 'application/json'}
+        response = self.app.post('/b2b_postman', data='{"nature": "WOB", "name": "John Forename", "address": "12 high street"}', headers=headers)
+        assert response.status_code == 201
+

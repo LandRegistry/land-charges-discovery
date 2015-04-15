@@ -59,3 +59,38 @@ class TestServer:
         json_data = json.loads(response.data.decode())
         assert(len(json_data) == 2)
         assert(json_data[1]['name'] == "ARTHUR MURRAY")
+
+    def test_searchall(self):
+        response = self.app.get("/search_all")
+        assert response.status_code == 200
+
+    def test_searchname(self):
+        headers = {'Content-Type': 'application/json'}
+        name = '{"name": "ROBERT TREBOR"}'
+        response = self.app.post('/search_name', data=name, headers=headers)
+        assert response.status_code == 200
+        assert 'FLAT' in response.data.decode()
+        print(response.data.decode())
+
+    def test_searchloop(self):
+        data = [
+            '{"name": "ROBERT TREBOR"}',
+            '{"name": "Jack Bloggs"}',
+            '{"name": "pat smith"}'
+        ]
+        headers = {'Content-Type': 'application/json'}
+        num = 0
+        for i in data:
+            name = data[num]
+            response = self.app.post('/search_name', data=name, headers=headers)
+            assert response.status_code == 200
+            print(response.data.decode())
+            num = num + 1
+
+    def test_register(self):
+        headers = {'Content-Type': 'application/json'}
+        data = '{"nature": "WOB", "name": "I.P. Freely", "address": "54 high street, plymouth"}'
+        response = self.app.post('/register', data=data, headers=headers)
+        assert response.status_code == 201
+        print(response.data.decode())
+
