@@ -143,7 +143,7 @@
                 <span class="glyphicon glyphicon-remove" style="color:red"></span> {{nature_error}}
                 {% endif %}
                 <br/><br/>
-                <input class="btn btn-success pull-right" type="submit">
+                <input class="btn btn-success pull-right" id="submit" type="submit">
                 <br/><br/>
             </form>
         </div>
@@ -151,7 +151,7 @@
     {% if results is defined %}
         <div>
             <p>{{results}}</p>
-            <a href="insolvency" class="btn btn-primary pull-right" >Next</a>
+            <a href="insolvency" class="btn btn-primary pull-right" id="Next">Next</a>
         </div>
     {% endif %}
 </main>
