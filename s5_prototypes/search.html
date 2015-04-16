@@ -3,7 +3,7 @@ layout: default
 title: Bankruptcy Search
 permalink: /search/
 ---
-      <!-- Main hero unit for a primary marketing message or call to action -->
+      
       <div class="row">
         <h2>Bankruptcy search</h2>
         
@@ -12,12 +12,104 @@ permalink: /search/
 	  	<li class="active">Bankruptcy search</li>
 		</ul>
         <p>Some informative text about the service. </p>
-        <p><a href="#" class="btn btn-primary btn-large">Next &raquo;</a></p>
       </div>
-
-
-
-
-
-      
-
+<div class="row">
+<div id="imgpanel" class="col-md-7">
+	<img src="/images/searchform.png" />
+</div>	
+<div id="inputpanel" class="col-md-5">
+<form class="form-inline" role="form">
+   <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Names to search </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                	<div class="form-group" id="name1" style="width:100%; padding-bottom:5px">
+                		<label >Name 1 : </label>
+                		<label class="sr-only" for="fname1">Forename:</label>
+                		<input id="fname1" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname1">Surname:</label>
+                		<input id="sname1" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" id="name2" style="width:100%; padding-bottom:5px">
+                		<label >Name 2 : </label>
+                		<label class="sr-only" for="fname2">Forename:</label>
+                		<input id="fname2" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname2">Surname:</label>
+                		<input id="sname2" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" id="name3" style="width:100%; padding-bottom:5px">
+                		<label >Name 3 : </label>
+                		<label class="sr-only" for="fname3">Forename:</label>
+                		<input id="fname3" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname3">Surname:</label>
+                		<input id="sname3" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" id="name4" style="width:100%; padding-bottom:5px">
+                		<label >Name 4 : </label>
+                		<label class="sr-only" for="fname4">Forename:</label>
+                		<input id="fname4" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname4">Surname:</label>
+                		<input id="sname4" class="form-control" placeholder="Surname"/>
+                		
+                	</div>
+                	<div class="form-group" id="name5" style="width:100%; padding-bottom:5px;">
+                		<label >Name 5 : </label>
+                		<label class="sr-only" for="fname5">Forename:</label>
+                		<input id="fname5" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname5">Surname:</label>
+                		<input id="sname5" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" id="name6" style="width:100%;">
+                		<label >Name 6 : </label>
+                		<label class="sr-only" for="fname6">Forename:</label>
+                		<input id="fname6" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname6">Surname:</label>
+                		<input id="sname6" class="form-control" placeholder="Surname"/>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Applicants details</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Fee</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="row">
+       
+        <p><a href="#" class="btn btn-primary btn-large pull-right">Search &raquo;</a></p>
+      </div>
+</form>
+</div>
+</div>      
+<script>
+	function showname(id) {
+		alert(id);
+		document.getElementById(name).style.display = "block";
+	}
+	
+</script>
