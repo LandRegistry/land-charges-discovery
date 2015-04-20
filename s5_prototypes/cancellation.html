@@ -6,34 +6,90 @@ permalink: /cancellation/
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="row">
-        <h2>Bankruptcy register - Input Screen</h2>
+        <h2>Bankruptcy cancellation</h2>
         
         <ul class="breadcrumb" style="margin-left:0px">
-	  	<li><a href="{{ site.baseurl }}/">Home</a> </li>
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li><a href="/cancellation_list">Bankruptcy cancellation list</a></li>
 	  	<li class="active">Bankruptcy cancellation</li>
 		</ul>
         <div class="row">
         	<div class="col-sm-4">
-        		<h4>Complete the inputs below</h4>
-        		<div class="fixed">
-        			<div class="input-group col-sm-8">
-		  			<label class="input-group-addon" style="width: 110px" id="forename">Forename(s)</label>
-		  			<input type="text" class="form-control" placeholder="Jane Mary" aria-describedby="forename">
-					</div>
-					<div class="input-group col-sm-8">
-			  			<label class="input-group-addon" style="width: 110px" id="surname">Surname</label>
-			  			<input type="text" class="form-control" placeholder="Doe" aria-describedby="surname">
-					</div>
-        		
-        		</div>
+    			<h5>Fee:</h5>
+    			<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				    Direct Debit 
+				  </label>
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    Cheque 
+				  </label>
+				</div>
+				<h5>Details of the entry:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="nature">Nature</label>
+	  				<input type="text" class="form-control" placeholder="PAB or WOB" aria-describedby="nature">
+				</div>
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="regno">LC Reg No</label>
+	  				<input type="text" class="form-control" aria-describedby="regno">
+				</div>
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="date">Reg Date</label>
+	  				<input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="date">
+				</div>
+				
+			</br>
+				<h5>Details of the estate owner:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="forename">Forename(s)</label>
+	  				<input type="text" class="form-control" placeholder="Jane Mary" aria-describedby="forename">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="surname">Surname</label>
+		  			<input type="text" class="form-control" placeholder="Doe" aria-describedby="surname">
+				</div>
+			</br>
+				<h5>Details of the applicant:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="ref">Reference</label>
+	  				<input type="text" class="form-control" aria-describedby="ref">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="keyno">Key Number</label>
+		  			<input type="text" class="form-control" aria-describedby="keyno">
+				</div>
+				or
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="custname">Name</label>
+	  				<input type="text" class="form-control" aria-describedby="custname">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="custaddr1">Address</label>
+		  			<input type="text" class="form-control" aria-describedby="custaddr1">
+		  		</div>
+		  		<div class="input-group col-sm-10">	
+		  			<label class="input-group-addon" style="width: 110px" id="postcode">Postcode</label>
+		  			<input type="text" class="form-control" aria-describedby="postcode">
+				</div>
+		  		<div class="input-group col-sm-10">	
+		  			<label class="input-group-addon" style="width: 110px" id="custcounty">County</label>
+		  			<input type="text" class="form-control" aria-describedby="custcounty">
+				</div>
+				        		
+    
         	</div>	
-        	<div style="overflow:auto"id="appimg" class="col-sm-8" style="width: 200px;height: 200px">
+        	<div id="appimg" class="col-sm-8" style="width: 800px; height: 500px; overflow: auto">
 				<img src="/images/searchform.png"/>
        		</div>
-        	
-        	
+        </br>
+        		<div class="row" style="margin-top: 10px;">
+        		<a href ="../cancellation_list"<p><input class="btn btn-success pull-right" type="button" value="Submit &raquo;" /></p></a>
+      		</div>
         	
     	</div>
+    		
         
       </div>
 

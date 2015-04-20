@@ -52,8 +52,8 @@ $on-laptop:        800px;
 ;
 
 .fixed {
-    position: fixed;
-    top: 250px;
+    position: static;
+    top: 190px;
     left: 100;
     width: 380px;
     height: 100%;
