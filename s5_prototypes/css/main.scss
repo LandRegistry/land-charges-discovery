@@ -50,3 +50,11 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+.fixed {
+    position: fixed;
+    top: 250px;
+    left: 100;
+    width: 500px;
+    height: 100%;
+}
