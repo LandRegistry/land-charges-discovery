@@ -1,30 +1,44 @@
 ---
 layout: default
 title: Bankruptcy Search
-permalink: /search/
+permalink: /amend/
 ---
 
       <div class="row">
-        <h2>Bankruptcy search</h2>
+        <h2>Bankruptcy amendment</h2>
         
         <ul class="breadcrumb" style="margin-left:0px">
 	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
-	  	<li><a href="/pending_searches">Pending searches</a> </li>
-	  	<li class="active">Search</li>
+	  	<li><a href="/pending_amendments">Pending amendments</a> </li>
+	  	<li class="active">Amend</li>
 		</ul>
       </div>
 <div class="row">
-<div id="imgpanel" class="col-md-4" style="border:solid 1px  #D8D8D8">
+<div id="imgpanel" class="col-md-6">
+
+	<div class="col-md-10"><h3>Application form</h3></div>
+	<div class="col-md-2" style="padding-top:20px"><input onclick="document.querySelector('#flip-toggle').classList.toggle('hover');" class="btn btn-primary btn-xs pull-right" type="button" value="Flip form" /></div>
+	<div class="col-md-12 flip-container" id="flip-toggle">
+		<div class="flipper">
+			<div class="front" >
+				<img class="image" src="/images/searchform.png" alt="application page 1">
+				<div class="pull-right">page 1</div>
+			</div>
+			<div class="back">
+				<img class="image" src="/images/searchform.png" alt="application page 2">
+				<div class="pull-right">page 2</div>
+			</div>
+		</div>
+	</div>
 	
-<div class="jc-demo-box">
 	
-	<img src="/images/searchform.png" id="target" alt="[Jcrop Example]" />
-</div>
+
+
 	
 	
 	
 </div>	
-<div id="inputpanel" class="col-md-8">
+<div id="inputpanel" class="col-md-6">
 <style>
 	#preview-pane .preview-container {
   width: 100%;
@@ -176,3 +190,8 @@ permalink: /search/
 </div>  
 
 <script src="../js/JcropAPI.js"></script>
+<script>
+	$(".cont").click(function(){
+ 		$(this).toggleClass("rotator")  ; 
+	})
+</script>
