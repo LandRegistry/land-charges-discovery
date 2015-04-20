@@ -8,18 +8,17 @@ permalink: /search/
         <h2>Bankruptcy search</h2>
         
         <ul class="breadcrumb" style="margin-left:0px">
-	  	<li><a href="{{ site.baseurl }}/">Home</a> </li>
-	  	<li class="active">Bankruptcy search</li>
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li><a href="/pending_searches">Pending searches</a> </li>
+	  	<li class="active">Search</li>
 		</ul>
       </div>
 <div class="row">
 <div id="imgpanel" class="col-md-4" style="border:solid 1px  #D8D8D8">
 	
 <div class="jc-demo-box">
-
-  <img src="/images/searchform.png" id="target" alt="[Jcrop Example]" />
-
-  
+	<
+	<img src="/images/searchform.png" id="target" alt="[Jcrop Example]" />
 </div>
 	
 	
@@ -51,45 +50,45 @@ permalink: /search/
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                	<div class="form-group" id="name1" style="width:100%; padding-bottom:5px">
-                		<label >Name 1 : </label>
+            	<div class="panel-body">
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 1 : </label>
                 		<label class="sr-only" for="fname1">Forename:</label>
                 		<input id="fname1" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname1">Surname:</label>
                 		<input id="sname1" class="form-control" placeholder="Surname"/>
                 	</div>
-                	<div class="form-group" id="name2" style="width:100%; padding-bottom:5px">
-                		<label >Name 2 : </label>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 2 : </label>
                 		<label class="sr-only" for="fname2">Forename:</label>
                 		<input id="fname2" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname2">Surname:</label>
                 		<input id="sname2" class="form-control" placeholder="Surname"/>
                 	</div>
-                	<div class="form-group" id="name3" style="width:100%; padding-bottom:5px">
-                		<label >Name 3 : </label>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 3 : </label>
                 		<label class="sr-only" for="fname3">Forename:</label>
                 		<input id="fname3" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname3">Surname:</label>
                 		<input id="sname3" class="form-control" placeholder="Surname"/>
                 	</div>
-                	<div class="form-group" id="name4" style="width:100%; padding-bottom:5px">
-                		<label >Name 4 : </label>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 4 : </label>
                 		<label class="sr-only" for="fname4">Forename:</label>
                 		<input id="fname4" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname4">Surname:</label>
                 		<input id="sname4" class="form-control" placeholder="Surname"/>
                 		
                 	</div>
-                	<div class="form-group" id="name5" style="width:100%; padding-bottom:5px;">
-                		<label >Name 5 : </label>
+                	<div class="form-group" style="width:100%; padding-bottom:5px;">
+                		<label class="col-sm-2" >Name 5 : </label>
                 		<label class="sr-only" for="fname5">Forename:</label>
                 		<input id="fname5" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname5">Surname:</label>
                 		<input id="sname5" class="form-control" placeholder="Surname"/>
                 	</div>
-                	<div class="form-group" id="name6" style="width:100%;">
-                		<label >Name 6 : </label>
+                	<div class="form-group" style="width:100%;">
+                		<label class="col-sm-2" >Name 6 : </label>
                 		<label class="sr-only" for="fname6">Forename:</label>
                 		<input id="fname6" class="form-control" placeholder="Forename"/>
                 		<label class="sr-only" for="sname6">Surname:</label>
@@ -106,8 +105,39 @@ permalink: /search/
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
+                   <div class="form-group" style="width:100%; padding-bottom:5px">                		
+                		<label for="keyno" class="col-sm-2">Key Number:</label>
+                		<input id="keyno" class="form-control" placeholder="Key Number"/>                		
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="appname">Name:</label>
+                		<input id="appname" class="form-control" placeholder="Forename"/>
+                		<input id="appsname" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="houseno">Address:</label>
+                		<input id="houseno" class="form-control" placeholder="House"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="street">Street:</label>
+                		<input id="street" class="form-control" placeholder="Street"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="town">Town:</label>
+                		<input id="town" class="form-control" placeholder="Town"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="postcode">Postcode:</label>
+                		<input id="postcode" class="form-control" placeholder="Postcode"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="appref">Refernce:</label>
+                		<input id="appref" class="form-control" placeholder="Applicants reference"/>
+                	</div>
+              </div>
             </div>
         </div>
         <div class="panel panel-default">
@@ -118,12 +148,26 @@ permalink: /search/
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
+                <div class="col-md-12">	
+                   <div class="radio">
+					  <label>
+					    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+					    Charge to Direct Debit account
+					  </label>
+					</div>
+				</div>
+				<div class="col-md-12">	
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+					    Cheque received
+					  </label>
+					</div>
+				 </div>
             </div>
         </div>
     </div>
-      <div class="row">
+      <div class="row" style="margin-top: 10px;">
        
         <p><input class="btn btn-primary pull-right" type="button" value="Search &raquo;" /></p>
       </div>
