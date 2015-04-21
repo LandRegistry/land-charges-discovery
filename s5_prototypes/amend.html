@@ -9,30 +9,30 @@ permalink: /amend/
         
         <ul class="breadcrumb" style="margin-left:0px">
 	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
-	  	<li><a href="/pending_amendments">Pending amendments</a> </li>
+	  	<li><a href="/pending_amend">Pending amendments</a> </li>
 	  	<li class="active">Amend</li>
 		</ul>
       </div>
 <div class="row">	
 <div id="inputpanel" class="col-md-4">
 		
-<form  role="form">
+<form name="amendform" >
    <div class="panel-group fixed" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading" >
                 <h4 class="panel-title" >
-                    <a data-toggle="collapse" id="searchname" data-parent="#accordion" href="#collapseOne">1. Name of bankrupt </a>
-                </h4>
+                    <a data-toggle="collapse" id="amendname" data-parent="#accordion" href="#collapseOne">1. Name of bankrupt</a>
+                </h4><img id="nametick" style="display:none; width:25px; height: 25px; float:right; margin-top: -20px" src="/images/tick.png" />
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
             	<div class="panel-body">
                 	<div class="form-group">
                         <label>Forename</label>
-                        <input class="form-control" >
+                        <input id="fname" name="fname" onblur="javascript:checkpanel('name');" class="form-control" >
                     </div>
                     <div class="form-group">
                          <label>Surname</label>
-    					 <input class="form-control" >
+    					 <input id="sname" name="sname" onblur="javascript:checkpanel('name');" class="form-control" >
                     </div>
                     <div class="form-group">
                          <label>Also known as</label>
@@ -45,14 +45,14 @@ permalink: /amend/
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" id="searchapplicant" data-parent="#accordion" href="#collapseTwo">2. Occupation</a>
-                </h4>
+                    <a data-toggle="collapse" id="amendocc" data-parent="#accordion" href="#collapseTwo">2. Occupation</a>
+                </h4><img id="occtick" style="display:none; width:25px; height: 25px; float:right; margin-top: -20px" src="/images/tick.png" />
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                    <div class="panel-body">
                 	<div class="form-group">
                         <label>Occupation</label>
-                        <input class="form-control" >
+                        <input onblur="javascript:checkpanel('occ');" id="occupation" class="form-control" >
                     </div>
                     <div class="form-group">
                          <label>Trading name</label>
@@ -64,49 +64,106 @@ permalink: /amend/
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse"id="searchfee"  data-parent="#accordion" href="#collapseThree">3. Fee</a>
+                    <a data-toggle="collapse"id="ammendaddr"  data-parent="#accordion" href="#collapseThree">3. Address</a>
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                <div class="col-md-12">	
-                   <div class="radio">
-					  <label>
-					    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-					    Charge to Direct Debit account
-					  </label>
-					</div>
-				</div>
-				<div class="col-md-12">	
-					<div class="radio">
-					  <label>
-					    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-					    Cheque received
-					  </label>
-					</div>
-				 </div>
+                	<div class="form-group">
+                        <label>Address</label>
+                        <input id="address1" onblur="javascript:checkpanel('address');" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                         <label>County</label>
+    					 <input id="county1" class="form-control" >
+    					 <a href="#" onclick="javascript:document.getElementById('addr2').style.display = 'block';">Capture another address</a>
+                    </div>
+                    <div id="addr2" style="display:none">
+                    	<div class="form-group">
+                        <label>Address</label>
+                        <input id="address2" onblur="javascript:checkpanel('address');" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                         <label>County</label>
+    					 <input id="county2" class="form-control" >
+    					 <a href="#" onclick="javascript:document.getElementById('addr3').style.display = 'block';">Capture another address</a>
+                    </div>
+                    </div>
+                     <div id="addr3" style="display:none">
+                    	<div class="form-group">
+                        <label>Address</label>
+                        <input id="address3" onblur="javascript:checkpanel('address');" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                         <label>County</label>
+    					 <input id="county3" class="form-control" >
+    					 <a href="#">Capture another address</a>
+                    </div>
+                    </div>
+                    
+                	
+                </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"id="amendcourt"  data-parent="#accordion" href="#collapseFour">4. Court details</a>
+                </h4>
             </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                	<div class="form-group">
+                        <label>Name of court</label>
+                        <input class="form-control" >
+                    </div>
+                    <div class="form-group">
+                         <label>Petition number</label>
+    					 <input class="form-control" placeholder="No -- of 2015">
+                    </div>
+              </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"id="amendorig"  data-parent="#accordion" href="#collapseFive">5. Original registration</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                	<div class="form-group">
+                        <label>WO(B) registration</label>
+                        <input class="form-control" >
+                    </div>
+                    <div class="form-group">
+                         <label>PA(B) registration</label>
+    					 <input class="form-control">
+                    </div>
+              </div>
         </div>
     </div>
       <div class="row" style="margin-top: 10px;">
        
-        <p><input class="btn btn-primary pull-right" type="button" value="Submit &raquo;" /></p>
+        	<input class="btn btn-primary clearfix pull-right" type="button" value="Submit &raquo;" />
+        	<input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-primary pull-right" style="margin-right: 5px" type="button" value="Flip form" />
+        
       </div>
 </form>
 </div>
 </div>
 <div id="imgpanel" class="col-md-8">
 
-	<div class="col-md-10"><h3>Application form</h3></div>
-	<div class="col-md-2" style="padding-top:20px"><input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-primary btn-xs pull-right" type="button" value="Flip form" /></div>
+	<div class="col-md-12"><h3>Application form</h3></div>
+	
 	<div class="col-md-12 flip-container" id="flip-toggle">
 		<div class="flipper">
 			<div class="front" >
-				<img class="image" src="/images/searchform.png" alt="application page 1">
+				<img class="image" src="/images/amend1.png" alt="application page 1">
 				<div class="pull-right">page 1</div>
 			</div>
 			<div class="back">
-				<img class="image" src="/images/searchform.png" alt="application page 2">
+				<img class="image" src="/images/amend2.png" alt="application page 2">
 				<div class="pull-right">page 2</div>
 			</div>
 		</div>
@@ -114,4 +171,22 @@ permalink: /amend/
 	
 </div>
  
+ <script>
+ 	function checkpanel(panelname){
+ 		if (panelname == "name"){
+	 		if (document.getElementById('sname').value != "" & document.getElementById('fname').value != "") {
+	 			document.getElementById('nametick').style.display = "block";
+	 		} else {
+	 			document.getElementById('nametick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "occ"){
+	 		if (document.getElementById('occupation').value != "") {
+	 			document.getElementById('occtick').style.display = "block";
+	 		} else {
+	 			document.getElementById('occtick').style.display = "none";
+	 		}
+	 	}
+ 	}
+ </script>
 
