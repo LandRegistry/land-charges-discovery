@@ -1,0 +1,52 @@
+---
+layout: default
+title: Bankruptcy home dashboard 2
+permalink: /home_dashboard2/
+---
+
+<html>
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+<meta charset=utf-8 />
+
+</head>
+<body>
+  	<div class="row">
+		<h2>Bankruptcies</h2>
+	</div>	
+	  <div id="donut-example"></div>
+	  
+	  <div class="row" style="margin-top:30px">
+	  </br></br>
+				<div class="col-md-6" style="display:table-cell; vertical-align:middle; text-align:center" >
+					<a href = "search"<i class="fa fa-bar-chart fa-4x" style="margin-bottom:10px"></i></a>
+					<p style="font-size: 150%">Bankruptcy Stats</p> 
+				</div>
+				<div class="col-md-6" style="display:table-cell; vertical-align:middle; text-align:center" >
+					<a href = "search"<i class="fa fa-book fa-4x" style="margin-bottom:10px"></i></a>
+					<p style="font-size: 150%">LRBU</p> 
+				</div>
+		</div>
+	
+</body>
+
+<script>
+Morris.Donut({
+  element: 'donut-example',
+  data: [
+    {label: "Registrations", value: 11},
+    {label: "Amendments", value: 5},
+    {label: "Cancellations", value: 7},
+    {label: "Official Search", value: 5}
+  ],
+  colors: [
+	'#0BA462',
+	'#6495ED',
+	'#FF0000',
+	'#669999'
+]
+});
+</script>
+</html>
