@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Bankruptcy register input
-permalink: /register_input/
+title: Bankruptcy register approve
+permalink: /register_release/
 ---
 
 <script src="../js/jquery.min.js"></script>
@@ -108,11 +108,11 @@ permalink: /register_input/
 <div class="jc-demo-box">
 
 <div class="row">
-  <h2>Bankruptcy register - Input screen</h2>
+  <h2 style="color: green">Bankruptcy register - Approval screen</h2>
   <ul class="breadcrumb" style="margin-left:0px">
   <li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
   <li><a href="/register/">Bankruptcy register list</a></li>
-  <li class="active">Bankruptcy register input</li>
+  <li class="active">Bankruptcy register approve</li>
 </ul>
 </div>
 <div class="row">
@@ -127,27 +127,27 @@ permalink: /register_input/
     	</br>
     	<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="nature">Nature</label>
-  			<input type="text" class="form-control" placeholder="PAB or WOB" aria-describedby="nature">
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold "value="WOB">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="forename">Forename(s)</label>
-  			<input type="text" class="form-control" placeholder="Jane Mary" aria-describedby="forename">
+  			<input type="text" class="form-control" aria-describedby="forename" style="font-weight: bold "value="CLINT">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="surname">Surname</label>
-  			<input type="text" class="form-control" placeholder="Doe" aria-describedby="surname">
+  			<input type="text" class="form-control" aria-describedby="surname" style="font-weight: bold "value="EASTWOOD">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="occupation">Occupation</label>
-  			<input type="text" class="form-control" placeholder="Civil servant" aria-describedby="occupation">
+  			<input type="text" class="form-control" aria-describedby="occupation" style="font-weight: bold "value="COWBOY">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="address">Address</label>
-  			<input type="text" class="form-control" placeholder="3 New Street, Plymouth, PL1 1AA" aria-describedby="address">
+  			<input type="text" class="form-control" aria-describedby="address" style="font-weight: bold "value="1 NEW ROAD, PLYMOUTH, PL1 1AA">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="county">County</label>
-  			<input type="text" class="form-control" placeholder="Devon" aria-describedby="County">
+  			<input type="text" class="form-control" aria-describedby="County"style="font-weight: bold "value="DEVON">
 		</div>
 		<div>
 			<label class="dropdown">
@@ -187,25 +187,27 @@ permalink: /register_input/
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="keyumber">Key Number</label>
-  			<input type="text" class="form-control" placeholder="2244095" aria-describedby="keynumber">
+  			<input type="text" class="form-control" aria-describedby="keynumber"style="font-weight: bold "value="2244095">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="court">Court</label>
-  			<input type="text" class="form-control" placeholder="Plymouth Count Court" aria-describedby="court">
+  			<input type="text" class="form-control" aria-describedby="court" style="font-weight: bold "value="COUNTY COURT OF LIVERPOOL">
+  		</div>
+  		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="courtno">No.& Date</label>
-  			<input type="text" class="form-control" placeholder="155 of 2015" aria-describedby="courtno">
+  			<input type="text" class="form-control" aria-describedby="courtno" style="font-weight: bold "value="211 of 2015">
 		</div>
 		<div class="input-group col-sm-6">
   			<label class="input-group-addon" style="width: 110px" id="pab">PAB No</label>
-  			<input type="text" class="form-control" placeholder="1234" aria-describedby="pab">
+  			<input type="text" class="form-control" aria-describedby="pab" style="font-weight: bold "value="2213">
   			<label class="input-group-addon" style="width: 80px" id="wob">WOB No</label>
-  			<input type="text" class="form-control" placeholder="5678" aria-describedby="wob">
+  			<input type="text" class="form-control" aria-describedby="wob" style="font-weight: bold "value="2243">
   			<label class="input-group-addon" style="width:80px" id="date">Date</label>
-  			<input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="date">
+  			<input type="text" class="form-control" aria-describedby="date" style="font-weight: bold "value="22/03/2015">
 		</div>
 		<div>
 		</br>
-			<button type="button" class="btn btn-success" value="Register &raquo;">Submit</button>
+			 <button type="button" class="btn btn-success" value="Release &raquo;">Approve</button>
 		</div>
     	
     </div>
