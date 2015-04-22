@@ -1,0 +1,109 @@
+---
+layout: default
+title: Bankruptcy Search
+permalink: /view/
+---
+
+      <div class="row">
+        <h2>Bankruptcy viewer</h2>
+        
+        <ul class="breadcrumb" style="margin-left:0px">
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li class="active">Viewer</li>
+		</ul>
+      </div>
+<div class="row">	
+<div id="inputpanel" class="col-md-5">	
+<div class="panel panel-default" style="padding-top:0px">
+  <div class="panel-body" style="padding-top:0px">
+  			<h3>Search</h3>	
+<form name="amendform"  >         
+    <div class="input-group" style="margin-top: 30px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Name</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; " placeholder="Jonathan Smith">
+	</div>
+	
+	<div class="input-group" style="margin-top: 30px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Reference</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; " placeholder="LC, WO(B) or PA(B)">
+	</div>
+	
+	
+	<div class="input-group" style="margin-top: 30px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Court</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; " placeholder="County Court at Liverpool">
+	</div>
+    <div class="input-group" style="margin-top: 5px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Case number</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; " placeholder="No 155 of 2015">
+	</div>
+	
+      <div class="row" style="margin-top: 10px;">
+        	<input onclick="javascript:document.getElementById('regdetails').style.display = 'block';" class="btn btn-success clearfix pull-right" style="margin-right: 15px;" type="button" value="Search &raquo;" />
+      		<a href="/view" class="btn btn-primary active pull-right" style="margin-right: 5px;">Clear search</a>
+      </div>
+      
+      
+</form>
+</div>
+</div>
+</div>
+<div id="regdetails" style="display: none;" class="col-md-7">
+	
+	<div class="panel panel-default" style="padding-top:0px">
+  		<div class="panel-body" style="padding-top:0px">
+  		<h3>Registration  details</h3>	
+  			<button style="margin-top: -40px" type="button" id="appform" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
+  				View Application
+			</button>
+			    <div class="col-md-3" style="margin-top: 20px; font-weight: bold">Reference</div>
+			    <div class="col-md-9" style="margin-top: 20px">WO(B)/9340/15</div>
+			    <div class="col-md-3" style="margin-top: 10px; font-weight: bold">Date</div>
+			    <div class="col-md-9" style="margin-top: 10px">19th February 2015</div>
+
+			    <div class="col-md-3" style="margin-top: 30px; font-weight: bold">Name</div>
+			    <div class="col-md-9 " style="margin-top: 30px">Jonathan Smith</div>
+
+			    <div class="col-md-3" style="margin-top: 10px; font-weight: bold">Occupation</div>
+			    <div class="col-md-9" style="margin-top: 10px">Carer</div>
+			    <div class="col-md-3" style="margin-top: 10px; font-weight: bold">Addresses</div>
+			    <div class="col-md-3" style="margin-top: 10px">1 Mersey View</br>Liverpool</br>L3 7DF</div>
+			    <div class="col-md-3" style="margin-top: 10px">15 Hartley Court</br>Liverpool</br>L12 6SD</div>
+			    <div class="col-md-3" style="margin-top: 10px">25 Hartley Court</br>Liverpool</br>L12 6SD</div>
+			  	
+			  	<div class="col-md-3" style="margin-top: 30px; font-weight: bold">Court</div>
+			    <div class="col-md-9 " style="margin-top: 30px">County Court at Liverpool</div>
+			    <div class="col-md-3" style="margin-top: 10px; font-weight: bold">Petition No.</div>
+			    <div class="col-md-9" style="margin-top: 10px">155 of 2015</div>
+			    <div class="col-md-3" style="margin-top: 10px; font-weight: bold">Key Number</div>
+			    <div class="col-md-9" style="margin-top: 10px">1986269</div>		
+  		</div>
+	</div>
+
+	
+</div>
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">WO(B)/9340/15</h4>
+      </div>
+      <div class="modal-body">
+        <img class="image" src="/images/amend1.png" alt="application page 1">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <script>
+	$('#myModal').on('shown.bs.modal', function () {
+ 	 	$('#appform').focus()
+	})
+ </script>
+
