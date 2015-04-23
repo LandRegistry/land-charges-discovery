@@ -133,7 +133,7 @@
                 </div>
                 <label for="address" class="col-sm-2">Address:</label>
                 <input type="text" id="address" name="address" value="{{address}}"/>
-                {% if nature_error is defined %}
+                {% if address_error is defined %}
                 <span class="glyphicon glyphicon-remove" style="color:red"></span> {{address_error}}
                 {% endif %}
                 <br/><br/>

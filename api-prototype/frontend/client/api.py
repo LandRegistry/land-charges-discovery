@@ -64,11 +64,17 @@ def process():
         #print("please complete all fields")
         return render_template('insolvency.html', name_error=name, nature_error=nature, address_error=address)
     elif name_input=="" and nature_input=="":
-        return render_template('insolvency.html', name_error=name, nature_error=nature)
+        return render_template('insolvency.html', name_error=name, nature_error=nature, address=address_input)
     elif name_input=="" and address_input=="":
-        return render_template('insolvency.html', name_error=name, address_error=address)
+        return render_template('insolvency.html', name_error=name, address_error=address, nature=nature_input)
     elif nature_input== "" and address_input=="":
-        return render_template('insolvency.html', nature_error=nature, address_error=address)
+        return render_template('insolvency.html', nature_error=nature, address_error=address, name=name_input)
+    elif name_input=="" and nature_input!="" and address_input!="":
+        return render_template('insolvency.html', name_error=name, address=address_input, nature=nature_input)
+    elif address_input=="" and nature_input!="" and name_input!="":
+        return render_template('insolvency.html', name=name_input, address_error=address, nature=nature_input)
+    elif nature_input=="" and name_input!="" and address_input!="":
+        return render_template('insolvency.html', name=name_input, address=address_input, nature_error=nature)
     else:
         logging.info("past if statements")
         url = 'http://10.0.2.2:5001/register'
