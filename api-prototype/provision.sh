@@ -14,7 +14,7 @@ pip3 install virtualenvwrapper
 
 yum install -y nano
 
-gem install foreman
+gem install foreman --no-ri --no-rdoc
 
 echo "Configure Venv"
 cat >> /home/vagrant/.bashrc <<EOF
@@ -38,7 +38,7 @@ chown vagrant:vagrant /home/vagrant/procfile
 chown vagrant:vagrant /home/vagrant/run.sh
 chmod +x /home/vagrant/run.sh
 
-gem install --no-ri --no-rdoc puppet
+gem install --no-ri --no-rdoc puppet -v "3.7.5"
 
 puppet module install puppetlabs-postgresql
 puppet apply /vagrant/manifests/postgres.pp
