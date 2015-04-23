@@ -8,7 +8,7 @@
 					diameter : 150,
 					guage: 10,
 					coverBg: '#fff',
-					bgColor: '#efefef',
+					bgColor: '#ffa500',
 					fillColor: '#5c93c8',
 					percentSize: '30px',
 					percentWeight: 'normal'
