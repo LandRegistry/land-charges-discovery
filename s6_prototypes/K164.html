@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Process Rectification</title>
+		
+		<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/flip.css" type="text/css" />
+    
+    
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Land Charges Bankruptcy</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="banks_home.html">Home</a></li>
+        <li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">Actions<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Register</a></li>
+            	<li><a href="#">Amend</a></li>
+            	<li><a href="#">Cancel</a></li>
+            	<li><a href="#">Search</a></li>
+            	<li><a href="rectify.html">Rectify</a></li>
+            </ul>
+    	</li>
+    	<li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Stats</a></li>
+            	<li><a href="#">Viewer</a></li>
+            	<li><a href="tracker_input.html">Tracker</a></li>
+            </ul>
+    	</li>
+        <li><a href="#contact">LC Comms</a></li>
+        <li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">System Links<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Daylist Enquiry</a></li>
+            	<li><a href="#">LRPG</a></li>
+            	<li><a href="#">CORA</a></li>
+            </ul>
+    	</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container">
+	<h2><font color="red">Rectifications - Insert</font></h2>
+		
+</div>
+
+<div class="row" style="padding-top: 20px; padding-left: 30px">
+	<div class="row">
+        	<div class="col-sm-5 has-error">
+				<form>
+					<div class="form-group">
+						<label>Nature</label>
+						<img id="naturetick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="nature" name="nature" onblur="javascript:checkpanel('nature');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>County</label>
+						<img id="countytick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="county" name="county" onblur="javascript:checkpanel('county');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>District</label>
+						<img id="disttick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="district" name="county" onblur="javascript:checkpanel('district');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<img id="descripttick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="description" name="description" onblur="javascript:checkpanel('description');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Name</label>
+						<img id="nametick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="name" name="name" onblur="javascript:checkpanel('name');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Registration Number</label>
+						<img id="regnotick" style="display:none; width:25px; height: 25px; margin-left: 200px; margin-top: -30px" src="images/tick.png" />
+						<input id="regno" name="regno" onblur="javascript:checkpanel('regno');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Registration Date</label>
+						<img id="datetick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="date" name="date" onblur="javascript:checkpanel('date');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Additional Information</label>
+						<img id="infotick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="addlinfo" name="addlinfo" onblur="javascript:checkpanel('addlinfo');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Occupation</label>
+						<img id="occutick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="occupation" name="occupation" onblur="javascript:checkpanel('occupation');" class="form-control" >
+					</div>
+					<div class="form-group">
+						<label>Address</label>
+						<img id="addrtick" style="display:none; width:25px; height: 25px; margin-left:200px; margin-top: -30px" src="images/tick.png" />
+						<input id="address" name="address" onblur="javascript:checkpanel('address');" class="form-control" >
+					</div>
+				</form>			
+    			
+				        		
+    
+        	</div>
+
+       		<!--div class="fixed"-->
+       		<div class="col-sm-2" style="padding-top:20px"><input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-danger btn-s pull-right" type="button" value="Flip Page" /></div>
+			<div style="padding-top: 20px">
+        		<a href ="#"<p><input class="btn btn-success" type="button" value="Approve &raquo;" /></p></a>
+      		</div>
+			<div class= "col-sm-5 flip-container" style="width: 700px; height: 700px; overflow: auto" id="flip-toggle">
+		<div class="flipper">
+			<div class="front" >
+				<div class="pull-right">page 1</div>
+				<img class="image" src="images/PAB.png" alt="application page 1" style="width: 700px; height: 800px;">
+			</div>
+			<div class="back">
+				<div class="pull-right">page 2</div>
+				<img class="image" src="images/amend2.png" alt="application page 2" style="width: 700px; height: 800px;">
+			</div>
+			
+		</div>
+	</div>
+	
+	<!--/div-->
+
+        </br>
+    	
+    	</div>
+	
+</div>
+
+
+
+	</body>
+	
+	<script>
+ 	function checkpanel(panelname){
+ 		if (panelname == "nature"){
+	 		if (document.getElementById('nature').value != "") {
+	 			document.getElementById('naturetick').style.display = "block";
+	 		} else {
+	 			document.getElementById('naturetick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "county"){
+	 		if (document.getElementById('county').value != "") {
+	 			document.getElementById('countytick').style.display = "block";
+	 		} else {
+	 			document.getElementById('countytick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "district"){
+	 		if (document.getElementById('district').value != "") {
+	 			document.getElementById('disttick').style.display = "block";
+	 		} else {
+	 			document.getElementById('disttick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "description"){
+	 		if (document.getElementById('description').value != "") {
+	 			document.getElementById('descripttick').style.display = "block";
+	 		} else {
+	 			document.getElementById('descripttick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "name"){
+	 		if (document.getElementById('name').value != "") {
+	 			document.getElementById('nametick').style.display = "block";
+	 		} else {
+	 			document.getElementById('nametick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "regno"){
+	 		if (document.getElementById('regno').value != "") {
+	 			document.getElementById('regnotick').style.display = "block";
+	 		} else {
+	 			document.getElementById('regnotick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "date"){
+	 		if (document.getElementById('date').value != "") {
+	 			document.getElementById('datetick').style.display = "block";
+	 		} else {
+	 			document.getElementById('datetick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "addlinfo"){
+	 		if (document.getElementById('addlinfo').value != "") {
+	 			document.getElementById('infotick').style.display = "block";
+	 		} else {
+	 			document.getElementById('infotick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "occupation"){
+	 		if (document.getElementById('occupation').value != "") {
+	 			document.getElementById('occutick').style.display = "block";
+	 		} else {
+	 			document.getElementById('occutick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "address"){
+	 		if (document.getElementById('address').value != "") {
+	 			document.getElementById('addrtick').style.display = "block";
+	 		} else {
+	 			document.getElementById('addrtick').style.display = "none";
+	 		}
+	 	}
+ 	}
+ </script>
+
+</html>

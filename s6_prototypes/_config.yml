@@ -1,0 +1,11 @@
+# Site settings
+title: Land Registry Bankruptcy Unit
+email: your-email@domain.com
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: LandRegistry
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Rectification</title>
+		
+		<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Land Charges Bankruptcy</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="banks_home.html">Home</a></li>
+        <li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">Actions<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Register</a></li>
+            	<li><a href="#">Amend</a></li>
+            	<li><a href="#">Cancel</a></li>
+            	<li><a href="#">Search</a></li>
+            	<li><a href="rectify.html">Rectify</a></li>
+            </ul>
+    	</li>
+    	<li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Stats</a></li>
+            	<li><a href="#">Viewer</a></li>
+            	<li><a href="tracker_input.html">Tracker</a></li>
+            </ul>
+    	</li>
+        <li><a href="#contact">LC Comms</a></li>
+        <li class="dropdown">
+        	<a href="#about" class="dropdown-toggle" data-toggle="dropdown">System Links<b class="caret"></b></a>
+        	<ul class="dropdown-menu" role="menu">
+        		<li><a href="#">Daylist Enquiry</a></li>
+            	<li><a href="#">LRPG</a></li>
+            	<li><a href="#">CORA</a></li>
+            </ul>
+    	</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container">
+	<h2><font color="red">Inhouse Rectification</font></h2>
+	</br></br>	
+	<div class="row">
+	<div class="col-md-8">	
+		<table id="resultsTable" class="table table-striped">
+                <thead>
+                    <th class="col-sm-2">Recieved Date</thclass>
+                    <th class="col-sm-6" style="padding-left: 25px">View Image</th>
+                </thead>
+                    <tr>
+                        <td>16/04/2015 07:30:01</td>
+                        <td align="left">
+                        	<img id="rectify_img" src="images/pab.png" style="display: none;" width="600" height="800"/>
+                        	<i class="fa fa-folder-open fa-2x" type="submit" id="rectify" onclick="showImg()"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16/04/2015 07:35:43</td>
+                        <td align="left">
+                        	<img id="rectify_img" src="images/pab.png" style="display: none;" width="600" height="800"/>
+                        	<i class="fa fa-folder-open fa-2x" type="submit" id="rectify" onclick="showImg()"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16/04/2015 08:01:14</td>
+                        <td align="left">
+                        	<img id="rectify_img" src="images/pab.png" style="display: none;" width="600" height="800"/>
+                        	<i class="fa fa-folder-open fa-2x" type="submit" id="rectify" onclick="showImg()"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16/04/2015 08:10:58</td>
+                        <td align="left">
+                        	<img id="rectify_img" src="images/pab.png" style="display: none;" width="600" height="800"/>
+                        	<i class="fa fa-folder-open fa-2x" type="submit" id="rectify" onclick="showImg()"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16/04/2015 08:12:25</td>
+                        <td align="left">
+                        	<img id="rectify_img" src="images/pab.png" style="display: none;" width="600" height="800"/>
+                        	<i class="fa fa-folder-open fa-2x" type="submit" id="rectify" onclick="showImg()"></i>
+                        </td>
+                    </tr>
+            </table>
+	</div>
+	<div class="col-md-4">
+		<h3>Registration number to be Rectified:</h3>
+		<input type="text" class="form-control">
+	</br></br>
+		<h3>Select the nature of the rectification:</h3>
+		<form>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="court"><input type="radio" name="radio" value="court" data-href="k199cd.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="court">Court Details</label>
+		</div></br>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="occupation"><input type="radio" name="radio" value="occuptation" data-href="k199cd.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="occupation">Occupation</label>
+		</div></br>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="address"><input type="radio" name="radio" value="address" data-href="k199cd.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="address">Address</label>
+		</div></br>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="name"><input type="radio" name="radio" value="name1" data-href="k164.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="name1">Name - Inserts</label>
+		</div>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="name"><input type="radio" name="radio" value="name2" data-href="k108.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="name2">Name - Canellations</label>
+		</div></br>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="nature"><input type="radio" name="radio" value="nature1" data-href="k164.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="nature1">Nature - Inserts</label>
+		</div>
+		<div class="input-group col-sm-12" style="margin-left: -15px">
+			<label class="input-group-addon" id="nature"><input type="radio" name="radio" value="nature2" data-href="k108.html"></label>
+			<label type="text" class="form-control formbgclr" aria-describedby="nature2">Nature - Cancellations</label>
+		</div></br>
+		<!--input type="submit" value="Continue" id="btnFormSubmit"-->
+		<input class="btn btn-success pull-right" type="submit" value="Proceed" id="btnFormSubmit">
+		<!--div class="row" style="margin-top: 10px;">
+    		<input type="submit" value="Proceed" id="btnFormSubmit">
+  		</div-->	
+		<a href="rectify.html" class="btn btn-primary pull-left" type="button">Reset</a>
+		</form>		
+		
+	</div>
+	</div>
+</div>
+
+<form>
+<!--
+<input type="RADIO" name="button" value="^button1^" data-href="index1.html" checked>this button goes to index1.html (Default)<BR></BR>
+<input type="RADIO" name="button" value="^button2^" data-href="index2.html">this button goes to index2.html<BR>   </BR>
+<input type="RADIO" name="button" value="^button3^" data-href="index3.html">this button goes to index3.html<BR>  </BR>
+-->
+
+</form>
+
+<script>
+	var submit = document.getElementById('btnFormSubmit');
+submit.addEventListener('click', submitForm);
+
+function submitForm(event){
+event.preventDefault();
+event.stopPropagation();
+
+var href = '',
+inputs = this.parentNode.getElementsByTagName('input')
+    for(var i=0;i<inputs.length;i++){
+         if(inputs[i].getAttribute('name') == 'radio' && inputs[i].checked){
+             href = inputs[i].getAttribute('data-href');
+             window.location = href;
+         }
+    }
+}
+</script>
+
+<script>
+        function showImg() {
+            document.getElementById("rectify_img").style.display = "";
+        }
+    </script>
+
+
+
+
+
+
+	</body>
+</html>
