@@ -1,0 +1,126 @@
+---
+layout: default
+title: Bankruptcy statistics
+permalink: /stats/
+---
+	<script type='text/javascript' src="/js/jqBarGraph.1.1.js"></script>
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="row">
+        <h2>Bankruptcy statistics</h2>
+        
+        <ul class="breadcrumb" style="margin-left:0px">
+
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li class="active">Bankruptcy statistics</li>
+		</ul>
+		
+	    <script src="/js/jquery.circlechart.js"></script>
+
+		
+		<div class = "col-md-12">
+			
+				<h2>Bankruptcy: % of intakes processed</h2>
+				      <div class="demo-1 col-md-3" data-percent="90">
+				      	<h3>Registrations</h3><br/>
+				      </div>
+				      <div class="demo-2 col-md-3" data-percent="75">
+				      	<h3>Amendments</h3><br/>
+				      </div>
+				      <div class="demo-3 col-md-3" data-percent="25">
+				      	<h3>Cancellations</h3><br/>
+				      </div>
+				      <div class="demo-4 col-md-3" data-percent="65">
+				      	<h3>Searches</h3><br/>
+				      </div>
+		    
+	    </div>
+	    <div class="col-md-12" style="margin-top: 40px;">
+	    	<div class="col-md-6"><div id="chart-1" ></div></div>
+	    	<div class="col-md-6"><div id="chart-2" ></div></div>
+	    </div>
+		<script>
+		
+		$('.demo-1').percentcircle({
+		animate : true,
+		diameter : 100,
+		guage: 3,
+		coverBg: '#fff',
+		fillColor: '#6B0E1D',
+		percentSize: '18x',
+		percentWeight: 'normal'
+		});
+				
+		$('.demo-2').percentcircle({
+		animate : true,
+		diameter : 100,
+		guage: 3,
+		coverBg: '#fff',
+		fillColor: '#6B0E1D',
+		percentSize: '18px',
+		percentWeight: 'normal'
+		});		
+		$('.demo-3').percentcircle({
+		animate : true,
+		diameter : 100,
+		guage: 3,
+		coverBg: '#fff',
+		fillColor: '#6B0E1D',
+		percentSize: '18px',
+		percentWeight: '20px'
+		});	
+		$('.demo-4').percentcircle({
+		animate : true,
+		diameter : 100,
+		guage: 10,
+		coverBg: '#fff',
+		fillColor: '#6B0E1D',
+		percentSize: '18px',
+		percentWeight: 'normal'
+		});		
+					
+		// Bar Chart js
+		arrayOfData1 = new Array(
+			[[40,36],'Registrations'],
+			[[24,18],'Amendments'],
+			[[15,4],'Cancellations'],
+			[[64,42],'Searches']
+			);	
+			
+		arrayOfData2 = new Array(
+			[[40,36,40,60],'Monday'],
+			[[24,18,40,60],'Tuesday'],
+			[[15,4,40,60],'Wednesday'],
+			[[64,42,40,60],'Thursday'],
+			[[36,18,4,42],'Friday']
+			);
+			
+			$('#chart-1').jqBarGraph({data: arrayOfData1,
+				colors: ['#ffa500','#6B0E1D'],
+				legends: ['Intake','Processed'],
+				legend: true,
+				width: 500,
+				color: '#ffffff',
+				type: 'multi',
+				postfix: '',
+				title: '<h3>Todays Statistics</h3><br/>'
+			});
+			
+			$('#chart-2').jqBarGraph({data: arrayOfData2,
+				colors: ['#ffa500','#CC6633','#663300','#6B0E1D'],
+				legends: ['Registrations','Amendments','Cancellations','Searches'],
+				legendWidth: 150,
+				legend: true,
+				width: 600,
+				color: '#ffffff',
+				type: 'multi',
+				postfix: '',
+				title: '<h3>Week 22 Statistics</h3><br/>'
+			});
+		 </script>
+		
+		</body>
+
+        
+      </div>
+

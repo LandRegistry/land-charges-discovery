@@ -1,0 +1,122 @@
+---
+layout: default
+title: Bankruptcy Search
+permalink: /approve_amend/
+---
+
+      <div class="row">
+        <h2 style="color: green">Bankruptcy amendment</h2>
+        
+        <ul class="breadcrumb" style="margin-left:0px">
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li><a href="/pending_amend">Pending amendments</a> </li>
+	  	<li class="active">Approve amendment</li>
+		</ul>
+      </div>
+<div class="row">	
+<div id="inputpanel" class="col-md-5">
+<h3>Check, amend and approve</h3>
+<h4 style="margin: 40px 0px;">Capture details</h4>		
+<form name="amendform"  >           
+    <div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Name</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; " value="Jonathan Smith">
+	</div>
+	<div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Also known as</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="Jon Smith">
+	</div>
+	<div class="input-group" style="margin-top: 10px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Occupation</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="Carer">
+	</div>
+	<div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Trading name</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="">
+	</div>
+	<div class="input-group" style="margin-top: 10px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Address 1</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="1 Mersey View, Liverpool L3 7DF">
+	</div>
+    <div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">County 1</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="Merseyside">
+	</div>
+	<div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Address 2</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="15 Hartley Court, Liverpool L12 6SD">
+	</div>
+    <div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">County 2</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="Merseyside">
+	</div>
+	<div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Address 3</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="25 Hartley Court, Liverpool L12 6SD">
+	</div>
+    <div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">County 3</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="Merseyside">
+	</div>
+	<div class="input-group" style="margin-top: 10px">
+  			<label class="input-group-addon" style="width:160px" id="nature">Court</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="County Court at Liverpool">
+	</div>
+    <div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">Petition number</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="No 155 of 2015">
+	</div>
+	<div class="input-group" style="margin-top: 10px">
+  			<label class="input-group-addon" style="width:160px" id="nature">WO(B)</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="WO/9340/15">
+	</div>
+	<div class="input-group">
+  			<label class="input-group-addon" style="width:160px" id="nature">PA(B)</label>
+  			<input type="text" class="form-control" aria-describedby="nature" style="font-weight: bold; width:300px; "value="8489">
+	</div>
+      <div class="row" style="margin-top: 10px;">
+        	<input class="btn btn-success clearfix pull-right" type="button" value="Approve &raquo;" />
+        	<input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-primary pull-right" style="margin-right: 5px" type="button" value="Flip form" />
+      </div>
+      
+      
+</form>
+</div>
+<div id="imgpanel" class="col-md-7">
+
+	<div class="col-md-12"><h3>Application form</h3></div>
+	
+	<div class="col-md-12 flip-container" style="width: 800px; height: 800px; overflow: auto" id="flip-toggle">
+		<div class="flipper">
+			<div class="front" >
+				<img class="image" src="/images/amend1.png" alt="application page 1">
+				<div class="pull-right">page 1</div>
+			</div>
+			<div class="back">
+				<img class="image" src="/images/amend2.png" alt="application page 2">
+				<div class="pull-right">page 2</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+ 
+ <script>
+ 	function checkpanel(panelname){
+ 		if (panelname == "name"){
+	 		if (document.getElementById('sname').value != "" & document.getElementById('fname').value != "") {
+	 			document.getElementById('nametick').style.display = "block";
+	 		} else {
+	 			document.getElementById('nametick').style.display = "none";
+	 		}
+	 	}
+	 	if (panelname == "occ"){
+	 		if (document.getElementById('occupation').value != "") {
+	 			document.getElementById('occtick').style.display = "block";
+	 		} else {
+	 			document.getElementById('occtick').style.display = "none";
+	 		}
+	 	}
+ 	}
+ </script>
+

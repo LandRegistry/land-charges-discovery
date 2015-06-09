@@ -1,0 +1,178 @@
+---
+layout: default
+title: Bankruptcy Search
+permalink: /search/
+---
+
+      <div class="row">
+        <h2>Bankruptcy search</h2>
+        
+        <ul class="breadcrumb" style="margin-left:0px">
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li><a href="/pending_searches">Pending searches</a> </li>
+	  	<li class="active">Search</li>
+		</ul>
+      </div>
+<div class="row">
+<div id="imgpanel" class="col-md-4" style="border:solid 1px  #D8D8D8">
+	
+<div class="jc-demo-box">
+	
+	<img src="/images/searchform.png" id="target" alt="[Jcrop Example]" />
+</div>
+	
+	
+	
+</div>	
+<div id="inputpanel" class="col-md-8">
+<style>
+	#preview-pane .preview-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom:10px;
+  border:solid 1px #D8D8D8;
+}
+	
+</style>
+<div id="preview-pane">
+    <div class="preview-container">
+      <img src="/images/searchform.png" class="jcrop-preview" id="preview" alt="Preview" />
+    </div>
+  </div>	
+	
+<form class="form-inline" role="form">
+   <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" >
+                <h4 class="panel-title" >
+                    <a data-toggle="collapse" id="searchname" data-parent="#accordion" href="#collapseOne">1. Names to search </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+            	<div class="panel-body">
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 1 : </label>
+                		<label class="sr-only" for="fname1">Forename:</label>
+                		<input id="fname1" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname1">Surname:</label>
+                		<input id="sname1" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 2 : </label>
+                		<label class="sr-only" for="fname2">Forename:</label>
+                		<input id="fname2" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname2">Surname:</label>
+                		<input id="sname2" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 3 : </label>
+                		<label class="sr-only" for="fname3">Forename:</label>
+                		<input id="fname3" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname3">Surname:</label>
+                		<input id="sname3" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" >Name 4 : </label>
+                		<label class="sr-only" for="fname4">Forename:</label>
+                		<input id="fname4" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname4">Surname:</label>
+                		<input id="sname4" class="form-control" placeholder="Surname"/>
+                		
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px;">
+                		<label class="col-sm-2" >Name 5 : </label>
+                		<label class="sr-only" for="fname5">Forename:</label>
+                		<input id="fname5" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname5">Surname:</label>
+                		<input id="sname5" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%;">
+                		<label class="col-sm-2" >Name 6 : </label>
+                		<label class="sr-only" for="fname6">Forename:</label>
+                		<input id="fname6" class="form-control" placeholder="Forename"/>
+                		<label class="sr-only" for="sname6">Surname:</label>
+                		<input id="sname6" class="form-control" placeholder="Surname"/>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" id="searchapplicant" data-parent="#accordion" href="#collapseTwo">2. Applicants details</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                   <div class="form-group" style="width:100%; padding-bottom:5px">                		
+                		<label for="keyno" class="col-sm-2">Key Number:</label>
+                		<input id="keyno" class="form-control" placeholder="Key Number"/>                		
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="appname">Name:</label>
+                		<input id="appname" class="form-control" placeholder="Forename"/>
+                		<input id="appsname" class="form-control" placeholder="Surname"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="houseno">Address:</label>
+                		<input id="houseno" class="form-control" placeholder="House"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="street">Street:</label>
+                		<input id="street" class="form-control" placeholder="Street"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="town">Town:</label>
+                		<input id="town" class="form-control" placeholder="Town"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<div class="col-sm-2"> </div>
+                		<label class="sr-only" for="postcode">Postcode:</label>
+                		<input id="postcode" class="form-control" placeholder="Postcode"/>
+                	</div>
+                	<div class="form-group" style="width:100%; padding-bottom:5px">
+                		<label class="col-sm-2" for="appref">Reference:</label>
+                		<input id="appref" class="form-control" placeholder="Applicants reference"/>
+                	</div>
+              </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"id="searchfee"  data-parent="#accordion" href="#collapseThree">3. Fee</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                <div class="col-md-12">	
+                   <div class="radio">
+					  <label>
+					    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+					    Charge to Direct Debit account
+					  </label>
+					</div>
+				</div>
+				<div class="col-md-12">	
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+					    Cheque received
+					  </label>
+					</div>
+				 </div>
+            </div>
+        </div>
+    </div>
+      <div class="row" style="margin-top: 10px;">
+       
+        <p><input class="btn btn-primary pull-right" type="button" value="Search &raquo;" /></p>
+      </div>
+</form>
+</div>
+</div>  
+
+<script src="../js/JcropAPI.js"></script>

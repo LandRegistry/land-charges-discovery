@@ -1,0 +1,118 @@
+---
+layout: default
+title: Bankruptcy register input
+permalink: /cancellation/
+---
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="row">
+        <h2>Bankruptcy cancellation</h2>
+        
+        <ul class="breadcrumb" style="margin-left:0px">
+	  	<li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+	  	<li><a href="/cancellation_list">Bankruptcy cancellation list</a></li>
+	  	<li class="active">Bankruptcy cancellation</li>
+		</ul>
+        <div class="row">
+        	<div class="col-sm-4">
+    			<h5>Fee:</h5>
+    			<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				    Direct Debit 
+				  </label>
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				    Cheque 
+				  </label>
+				</div>
+				<h5>Details of the entry:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="nature">Nature</label>
+	  				<input type="text" class="form-control" placeholder="PAB or WOB" aria-describedby="nature">
+				</div>
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="regno">LC Reg No</label>
+	  				<input type="text" class="form-control" aria-describedby="regno">
+				</div>
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="date">Reg Date</label>
+	  				<input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="date">
+				</div>
+				
+			</br>
+				<h5>Details of the estate owner:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="forename">Forename(s)</label>
+	  				<input type="text" class="form-control" placeholder="Jane Mary" aria-describedby="forename">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="surname">Surname</label>
+		  			<input type="text" class="form-control" placeholder="Doe" aria-describedby="surname">
+				</div>
+			</br>
+				<h5>Details of the applicant:</h5>
+    			<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="ref">Reference</label>
+	  				<input type="text" class="form-control" aria-describedby="ref">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="keyno">Key Number</label>
+		  			<input type="text" class="form-control" aria-describedby="keyno">
+				</div>
+				or
+				<div class="input-group col-sm-10">
+	  				<label class="input-group-addon" style="width: 110px" id="custname">Name</label>
+	  				<input type="text" class="form-control" aria-describedby="custname">
+				</div>
+				<div class="input-group col-sm-10">
+		  			<label class="input-group-addon" style="width: 110px" id="custaddr1">Address</label>
+		  			<input type="text" class="form-control" aria-describedby="custaddr1">
+		  		</div>
+		  		<div class="input-group col-sm-10">	
+		  			<label class="input-group-addon" style="width: 110px" id="postcode">Postcode</label>
+		  			<input type="text" class="form-control" aria-describedby="postcode">
+				</div>
+		  		<div class="input-group col-sm-10">	
+		  			<label class="input-group-addon" style="width: 110px" id="custcounty">County</label>
+		  			<input type="text" class="form-control" aria-describedby="custcounty">
+				</div>
+				        		
+    
+        	</div>
+       <!-- 	<div class="col-md-2" style="padding-top:20px"><input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-success btn-xs pull-right" type="button" value="Next Image"></div>	
+        	<div class="col-sm-8 flip-container" style="width: 800px; height: 500px; overflow: auto" id="flip-toggle">
+	        	<div class="flipper">
+	        		<div class="front">		        		
+						<img class="image" src="/images/K11pg1.png" alt="application page 1">
+		       		</div>
+	       		
+		       		<div class="back">
+						<img class="image" src="/images/K11pg2.png" alt="application page 2">
+	       			</div>
+       			</div>
+       		</div>  -->
+       		<div class="col-sm-2" style="padding-top:20px"><input onclick="document.querySelector('#flip-toggle').classList.toggle('flip');" class="btn btn-success btn-s pull-right" type="button" value="Flip Page" /></div>
+			<div class="col-sm-8 flip-container" style="width: 800px; height: 500px; overflow: auto" id="flip-toggle">
+		<div class="flipper">
+			<div class="front" >
+				<div class="pull-right">page 1</div>
+				<img class="image" src="/images/K11pg1.png" alt="application page 1">
+			</div>
+			<div class="back">
+				<div class="pull-right">page 2</div>
+				<img class="image" src="/images/court_order.png" alt="application page 2">
+			</div>
+		</div>
+	</div>
+
+        </br>
+    		<div class="row" style="margin-top: 10px;">
+        		<a href ="../cancellation_list"<p><input class="btn btn-success pull-right" type="button" value="Submit &raquo;" /></p></a>
+      		</div>
+        	
+    	</div>
+    		
+        
+      </div>
+

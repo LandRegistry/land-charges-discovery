@@ -1,0 +1,256 @@
+---
+layout: default
+title: Bankruptcy register input
+permalink: /register_input/
+---
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.Jcrop.js"></script>
+<script type="text/javascript">
+  jQuery(function($){
+
+    // Create variables (in this scope) to hold the API and image size
+    var jcrop_api,
+        boundx,
+        boundy,
+
+        // Grab some information about the preview pane
+        $preview = $('#preview-pane'),
+        $pcnt = $('#preview-pane .preview-container'),
+        $pimg = $('#preview-pane .preview-container img'),
+
+        xsize = $pcnt.width(),
+        ysize = $pcnt.height();
+    
+    console.log('init',[xsize,ysize]);
+    $('#target').Jcrop({
+      onChange: updatePreview,
+      onSelect: updatePreview,
+      aspectRatio: xsize / ysize
+    },function(){
+      // Use the API to get the real image size
+      var bounds = this.getBounds();
+      boundx = bounds[0];
+      boundy = bounds[1];
+      // Store the API in the jcrop_api variable
+      jcrop_api = this;
+
+      // Move the preview into the jcrop container for css positioning
+      $preview.appendTo(jcrop_api.ui.holder);
+    });
+
+    function updatePreview(c)
+    {
+      if (parseInt(c.w) > 0)
+      {
+        var rx = xsize / c.w;
+        var ry = ysize / c.h;
+
+        $pimg.css({
+          width: Math.round(rx * boundx) + 'px',
+          height: Math.round(ry * boundy) + 'px',
+          marginLeft: '-' + Math.round(rx * c.x) + 'px',
+          marginTop: '-' + Math.round(ry * c.y) + 'px'
+        });
+      }
+    };
+
+  });
+
+
+</script>
+<link rel="stylesheet" href="demo_files/main.css" type="text/css" />
+<link rel="stylesheet" href="demo_files/demos.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
+<style type="text/css">
+
+/* Apply these styles only when #preview-pane has
+   been placed within the Jcrop widget */
+.jcrop-holder #preview-pane {
+  display: block;
+  position: absolute;
+  z-index:2000;
+  top: 10px;
+  right: -280px;
+  padding: 6px;
+/*  border: 1px rgba(0,0,0,.4) solid;
+  background-color: black;
+/*
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);   */
+}
+
+
+/* The Javascript code will set the aspect ratio of the crop
+   area based on the size of the thumbnail preview,
+   specified here */
+#preview-pane .preview-container {
+  width: 600px;
+  height: 230px;
+  overflow: hidden;
+  margin-bottom:10px;
+  border:solid 1px #D8D8D8;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="span12">
+<div class="jc-demo-box">
+
+<div class="row">
+  <h2>Bankruptcy register - Input screen</h2>
+  <ul class="breadcrumb" style="margin-left:0px">
+  <li><a href="{{ site.baseurl }}/">Bankruptcy home</a> </li>
+  <li><a href="/register/">Bankruptcy register list</a></li>
+  <li class="active">Bankruptcy register input</li>
+</ul>
+</div>
+<div class="row">
+  <div  class="col-sm-5">	
+  <img src="/images/pab.png" id="target" alt="[Jcrop Example]" />
+  </div>
+  <div class="col-sm-7" id="preview-pane">
+    <div class="preview-container">
+      <img src="/images/pab.png" class="jcrop-preview" alt="Preview" />
+    </div>
+    <div class="container">
+    	</br>
+    	<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="nature">Nature</label>
+  			<input type="text" class="form-control" placeholder="PAB or WOB" aria-describedby="nature">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="forename">Forename(s)</label>
+  			<input type="text" class="form-control" placeholder="Jane Mary" aria-describedby="forename">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="surname">Surname</label>
+  			<input type="text" class="form-control" placeholder="Doe" aria-describedby="surname">
+		</div>
+		<div>
+			<label class="dropdown">
+              <label data-toggle="dropdown" role="button">Additional names</label>
+              <div class="dropdown-menu" role="menu">
+				<div style="width:570px">
+					<form>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="forename2">Forename(s)</label>
+	  					<input type="text" class="form-control" aria-describedby="forename2">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="surname2">Surname</label>
+	  					<input type="text" class="form-control"aria-describedby="surname2">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="forename3">Forename(s)</label>
+	  					<input type="text" class="form-control" aria-describedby="forename3">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="surname3">Surname</label>
+	  					<input type="text" class="form-control"aria-describedby="surname3">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="forename4">Forename(s)</label>
+	  					<input type="text" class="form-control" aria-describedby="forename4">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="surname4">Surname</label>
+	  					<input type="text" class="form-control"aria-describedby="surname4">
+					</div>
+					</form>
+				</div>
+			  </div>
+            </label>
+           </br>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="occupation">Occupation</label>
+  			<input type="text" class="form-control" placeholder="Civil servant" aria-describedby="occupation">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="address">Address</label>
+  			<input type="text" class="form-control" placeholder="3 New Street, Plymouth, PL1 1AA" aria-describedby="address">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="county">County</label>
+  			<input type="text" class="form-control" placeholder="Devon" aria-describedby="County">
+		</div>
+		<div>
+			<label class="dropdown">
+              <label data-toggle="dropdown" role="button">Additional addresses</label>
+              <div class="dropdown-menu" role="menu">
+				<div style="width:570px">
+					<form>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="address">Address</label>
+	  					<input type="text" class="form-control" aria-describedby="address">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="county">County</label>
+	  					<input type="text" class="form-control"aria-describedby="County">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="address">Address</label>
+	  					<input type="text" class="form-control" aria-describedby="address">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="county">County</label>
+	  					<input type="text" class="form-control"aria-describedby="County">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="address">Address</label>
+	  					<input type="text" class="form-control" aria-describedby="address">
+					</div>
+					<div class="input-group col-sm-12">
+	  					<label class="input-group-addon" style="width: 110px" id="county">County</label>
+	  					<input type="text" class="form-control"aria-describedby="County">
+					</div>
+					</form>
+				</div>
+			  </div>
+            </label>
+           </br>
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="keyumber">Key Number</label>
+  			<input type="text" class="form-control" placeholder="2244095" aria-describedby="keynumber">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="court">Court</label>
+  			<input type="text" class="form-control" placeholder="Plymouth Count Court" aria-describedby="court">
+  			<label class="input-group-addon" style="width: 110px" id="courtno">No.& Date</label>
+  			<input type="text" class="form-control" placeholder="155 of 2015" aria-describedby="courtno">
+		</div>
+		<div class="input-group col-sm-6">
+  			<label class="input-group-addon" style="width: 110px" id="pab">PAB No</label>
+  			<input type="text" class="form-control" placeholder="1234" aria-describedby="pab">
+  			<label class="input-group-addon" style="width: 80px" id="wob">WOB No</label>
+  			<input type="text" class="form-control" placeholder="5678" aria-describedby="wob">
+  			<label class="input-group-addon" style="width:80px" id="date">Date</label>
+  			<input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="date">
+		</div>
+		<div>
+		</br>
+			<button type="button" class="btn btn-success" value="Register &raquo;">Submit</button>
+		</div>
+    	
+    </div>
+  </div>
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

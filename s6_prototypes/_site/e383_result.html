@@ -60,15 +60,15 @@
 </div>
 
 <div class="container">
-	<h3>Searches summary:</h3>
+	<h3>Search summary: 28/04/2015</h3>
 	 <div class="col-sm-12">
     	<div class="input-group col-sm-12">
   			<label class="input-group-addon" style="width: 110px" id="revealed">Revealed</label>
   			<input type="text" class="form-control" aria-describedby="revealed" style="font-weight: bold "value="12">
   			<label class="input-group-addon" style="width: 110px" id="unalloc">Unallocated</label>
   			<input type="text" class="form-control" aria-describedby="unalloc" style="font-weight: bold "value="3">
-  			<label class="input-group-addon" style="width:110px" id="allocated">Allocated</label>
-  			<input type="text" class="form-control" aria-describedby="allocated" style="font-weight: bold "value="4">
+  			<label class="input-group-addon" style="width:110px" id="allocate">Allocated</label>
+  			<input type="text" class="form-control" aria-describedby="allocate" style="font-weight: bold "value="4">
 
     	
   			<label class="input-group-addon" style="width: 110px" id="investig">Investigated</label>
@@ -81,89 +81,304 @@
 	 </div> 	
 </br></br>
 	
-	<a onclick ="javascript:ShowHide('HiddenDiv')" href="javascript:;" ><button class="btn btn-large btn-block btn-primary" type="button">Block level button</button></a>
+	<a onclick ="javascript:ShowHide('full_list')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Full list</button></a>
 	
-	<div class="mid" id="HiddenDiv" style="DISPLAY: none" >
+	<div class="mid" id="full_list" style="DISPLAY: none" >
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table table-bordered">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
 					<tbody>
 					  <tr>
-						<td class = "col-md-4"><b>Class of charge</b></td>
-						<td>PA(B)</td>
+					  	<td>1</td>
+						<td class="col-sm-6"><b>John Adams</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
+					  </tr>
+					  <tr>						
+						<td>2</td>
+						<td class="col-sm-6"><b>Jacob Harris</b></td>
+						<td>Dismissed</td>
+						<td>Steve Millis</td>
+					  </tr>	
+					  <tr>
+						<td>3</td>
+						<td class="col-sm-6"><b>Annabelle Wright</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
 					  </tr>
 					  <tr>
-						<td><b>Registration Number</b></td>
-						<td>1012</td>
+						<td>4</td>
+						<td class="col-sm-6"d><b>Larry Ames</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
 					  </tr>
 					  <tr>
-						<td><b>Date</b></td>
-						<td>02.02.2015</td>
-					  </tr>
-					  <tr>
-						<td><b>Profession</b></td>
-						<td>Banker</td>
-					  </tr>
-					  <tr>
-						<td><b>Address</b></td>
-						<td>12 Old Town Lane, Littlehampton, Plymouth, PL3 3WW</td>
-					  </tr>
-					  <tr>
-						<td><b>Remarks</b></td>
-						<td>Plymouth County Court No 40 of 2015</td>
-					  </tr>
+						<td class="col-sm-2">5</td>
+						<td><b>Tony Bentley</b></td>
+						<td>Investigated</td>
+						<td>Zoe Trelease</td>
+					 </tr>
+						<td>6</td>
+						<td class="col-sm-6"><b>Sarah Brooke</b></td>
+						<td>Allocated</td>
+						<td>Steve Millis</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td class="col-sm-6"><b>Graham Smith</b></td>
+						<td>Allocated</td>
+						<td>Zoe Trelease</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td class="col-sm-6"><b>Paul Harris</b></td>
+						<td>Allocated</td>
+						<td>Rob Stephenson</td>
+					</tr>
+					<tr>					 
+						<td>9</td>
+						<td class="col-sm-6"><b>Emma Trello</b></td>
+						<td>Allocated</td>
+						<td>Zoe Trelease</td>
+					</tr>
+					<tr>					 
+						<td>10</td>
+						<td class="col-sm-6"><b>James John</b></td>
+						<td>Unallocated</td>
+						<td><form action="">
+							<p><input type="checkbox" name="allocate" value="allocate"> click to allocate</p>
+							</form>
+						</td>
+					</tr>
+					<tr>					 
+						<td>11</td>
+						<td class="col-sm-6"></tdclass="col-sm-6"><b>Francis Richmond</b></td>
+						<td>unallocated</td>
+						<td><form action="">
+							<p><input type="checkbox" name="allocate" value="allocate"> click to allocate</p>
+							</form>
+						</td>
+					</tr>
+					<tr>					 
+						<td>12</td>
+						<td class="col-sm-6"><b>Clarie Prowse</b></td>
+						<td>Unallocated</td>
+						<td><form action="">
+							<p><input type="checkbox" name="allocate" value="allocate" id="allocate"> click to allocate</p>
+							</form>
+						</td>
+					</tr>
 					</tbody>
 				</table>
-				<div style="margin:-20px 0px 0px 0px">
-					<form action="">
-					<p><input type="checkbox" name="OC" value="OC">Office Copy required</p>
-					</form>
-				</div>	
 			</div>
 					
 		</div>
-		
-		
+		<a href="e383_result.html"<button type="button" class="btn btn-success pull-right" value="Process &raquo;">Process</button></a>
+	</div>
+</br>
+</br>
+	<a onclick ="javascript:ShowHide('unallocated')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Unallocated</button></a>
+	<div class="mid" id="unallocated" style="DISPLAY: none" >
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table table-bordered">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>					 
+							<td>10</td>
+							<td class="col-sm-6"><b>James John</b></td>
+							<td>Unallocated</td>
+							<td><form action="">
+								<p><input type="checkbox" name="allocate" value="allocate"> click to allocate</p>
+								</form>
+							</td>
+						</tr>
+						<tr>					 
+							<td>11</td>
+							<td class="col-sm-6"></tdclass="col-sm-6"><b>Francis Richmond</b></td>
+							<td>unallocated</td>
+							<td><form action="">
+								<p><input type="checkbox" name="allocate" value="allocate"> click to allocate</p>
+								</form>
+							</td>
+						</tr>
+						<tr>					 
+							<td>12</td>
+							<td class="col-sm-6"><b>Clarie Prowse</b></td>
+							<td>Unallocated</td>
+							<td><form action="">
+								<p><input type="checkbox" name="allocate" value="allocate"> click to allocate</p>
+								</form>
+							</td>
+						</tr>
+					</tbody>
+					  
+					</tbody>
+				</table>
+			</div>
+					
+		</div>
+		<a href="e383_result.html"<button type="button" class="btn btn-success pull-right" value="Process &raquo;">Process</button></a>
+	</div>
+</br>
+</br>
+	<a onclick ="javascript:ShowHide('allocated')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Allocated</button></a>
+	<div class="mid" id="allocated" style="DISPLAY: none" >
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
+					<tbody>
+					  </tr>
+							<td>6</td>
+							<td class="col-sm-6"><b>Sarah Brooke</b></td>
+							<td>Allocated</td>
+							<td>Steve Millis</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td class="col-sm-6"><b>Graham Smith</b></td>
+							<td>Allocated</td>
+							<td>Zoe Trelease</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td class="col-sm-6"><b>Paul Harris</b></td>
+							<td>Allocated</td>
+							<td>Rob Stephenson</td>
+						</tr>
+						<tr>					 
+							<td>9</td>
+							<td class="col-sm-6"><b>Emma Trello</b></td>
+							<td>Allocated</td>
+							<td>Zoe Trelease</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+					
+		</div>
+	</div>
+</br>
+</br>
+	<a onclick ="javascript:ShowHide('investigated')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Investigated</button></a>
+	<div class="mid" id="investigated" style="DISPLAY: none" >
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-sm-2">5</td>
+							<td><b>Tony Bentley</b></td>
+							<td>Investigated</td>
+							<td>Zoe Trelease</td>
+						 </tr>
+					</tbody>
+				</table>
+			</div>
+					
+		</div>
+	</div>
+</br>
+</br>
+	<a onclick ="javascript:ShowHide('completed')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Completed</button></a>
+	<div class="mid" id="completed" style="DISPLAY: none" >
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
 					<tbody>
 					  <tr>
-						<td class = "col-md-4"><b>Class of charge</b></td>
-						<td>WO(B)</td>
+					  	<td>1</td>
+						<td class="col-sm-6"><b>John Adams</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
 					  </tr>
 					  <tr>
-						<td><b>Registration Number</b></td>
-						<td>1122</td>
+						<td>3</td>
+						<td class="col-sm-6"><b>Annabelle Wright</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
 					  </tr>
 					  <tr>
-						<td><b>Date</b></td>
-						<td>12.02.2015</td>
-					  </tr>
-					  <tr>
-						<td><b>Profession</b></td>
-						<td>Banker</td>
-					  </tr>
-					  <tr>
-						<td><b>Address</b></td>
-						<td>12 Old Town Lane, Littlehampton, Plymouth, PL3 3WW</td>
-					  </tr>
-					  <tr>
-						<td><b>Remarks</b></td>
-						<td>Plymouth County Court No 40 of 2015</td>
+						<td>4</td>
+						<td class="col-sm-6"d><b>Larry Ames</b></td>
+						<td>Completed</td>
+						<td>Rob Stephenson</td>
 					  </tr>
 					</tbody>
 				</table>
-				<div style="margin:-20px 0px 0px 0px">
-					<form action="">
-					<p><input type="checkbox" name="OC" value="OC">Office Copy required</p>
-					</form>
-				</div>	
 			</div>
+					
 		</div>
 	</div>
-
 	
+</br>
+</br>
+	<a onclick ="javascript:ShowHide('dismissed')" href="javascript:;" ><button class="btn btn-primary custom" type="button">Dismissed</button></a>
+	<div class="mid" id="dismissed" style="DISPLAY: none" >
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Seq No</th>
+							<th>Debtor's Name</th>
+							<th>Status</th>
+							<th>Staff Name</th>
+						</tr>
+					</thead>
+					<tbody>
+					  <tr>						
+						<td>2</td>
+						<td class="col-sm-6"><b>Jacob Harris</b></td>
+						<td>Dismissed</td>
+						<td>Steve Millis</td>
+					  </tr>	
+					</tbody>
+				</table>
+			</div>
+					
+		</div>
+	</div>
+		
 </div>
  
 	</body>
